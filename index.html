@@ -1,0 +1,1311 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Venkateshpura Lake Status Dashboard</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="index,follow">
+    <meta name="generator" content="GrapesJS Studio">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="./style.css">
+  </head>
+  <body class="gjs-t-body">
+    <header id="i4cmg" class="header-bar">
+      <div class="header-container">
+        <div class="brand-group">
+          <span class="logo">Venkateshpura Lake</span>
+        </div>
+        <button type="button"
+                id="i4cmg-toggle"
+                aria-label="Open menu"
+                aria-controls="i4cmg-nav"
+                aria-expanded="false"
+                class="nav-toggle">
+          <img src="https://api.iconify.design/lucide-menu.svg?color=currentColor&amp;width=20&amp;height=20"
+               alt="Menu icon"
+               width="20"
+               height="20"
+               loading="lazy"
+               id="i0hnn0u"/>
+        </button>
+        <nav class="primary-navigation">
+          <a href="./index.html" class="gjs-t-link nav-link-dashboard">Dashboard</a>
+          
+          <div class="dropdown-nav about-dropdown" style="display:inline-block; position:relative;">
+            <button type="button" class="gjs-t-link nav-link-dashboard dropdown-toggle" aria-haspopup="true" aria-expanded="false" style="background:none; border:none; cursor:pointer;">
+              About &#9662;
+            </button>
+            <ul class="dropdown-menu" style="display:none; position:absolute; left:0; top:100%; min-width:180px; background:white; box-shadow:0 2px 10px rgba(0,0,0,0.08); border-radius:0.4em; z-index:1000; margin:0; padding:0;">
+              <li style="list-style:none; margin:0;"><a href="./history.html" class="gjs-t-link nav-link-dashboard" style="display:block; padding:0.65em 1.2em;">History</a></li>
+              <li style="list-style:none; margin:0;"><a href="./flora-and-fauna.html" class="gjs-t-link nav-link-dashboard" style="display:block; padding:0.65em 1.2em;">Flora and Fauna</a></li>
+              <li style="list-style:none; margin:0;"><a href="./importance.html" class="gjs-t-link nav-link-dashboard" style="display:block; padding:0.65em 1.2em;">Importance of Lakes</a></li>
+            </ul>
+          </div>
+
+          <a href="./alerts.html" class="gjs-t-link nav-link-dashboard">Alerts</a>
+          <a href="./report-issue.html" class="gjs-t-button nav-button-report-issue">Report Issue</a>
+          <div style="display: inline-block; position: relative; vertical-align: middle;">
+            <button type="button" 
+              aria-label="Translate page"
+              id="translate-toggle-btn"
+              style="height: 28px; min-width: 38px; background: #eef3f7; border: 1px solid #dde4ee; border-radius: 5px; padding: 2px 10px; display: flex; align-items: center; gap: 6px; cursor: pointer; transition: background 0.18s;">
+              <img src="https://api.iconify.design/ic:round-translate.svg?color=%233c8574" alt="Translate" width="18" height="18" style="vertical-align: middle;" />
+              <span style="font-size: 0.98em; color: #326b6f; font-family: 'Inter',sans-serif;">Translate</span>
+            </button>
+            <div id="google_translate_element"
+                 style="display: none; position: absolute; left: 0; top: 110%; background: #fff; z-index: 1700; border: 1px solid #dde4ee; border-radius: 5px; min-width: 145px; box-shadow: 0 4px 18px rgba(60,133,116,0.12); padding: 9px 12px;">
+            </div>
+          </div>
+          <script>
+          (function() {
+            var container = document.currentScript
+              ? document.currentScript.previousElementSibling
+              : document.querySelector('[id="google_translate_element"]').parentElement;
+            var btn = container.querySelector('#translate-toggle-btn');
+            var panel = container.querySelector('#google_translate_element');
+
+            btn.addEventListener('click', function(e) {
+              e.stopPropagation();
+              var isVisible = panel.style.display === 'block';
+              panel.style.display = isVisible ? 'none' : 'block';
+            });
+
+            // Hide panel when clicking outside
+            document.addEventListener('click', function(e) {
+              if (!container.contains(e.target)) {
+                panel.style.display = 'none';
+              }
+            });
+
+            // Optional: Keyboard navigation (ESC to close)
+            btn.addEventListener('keydown', function(e) {
+              if (e.key === "Escape") {
+                panel.style.display = 'none';
+              }
+            });
+          })();
+          </script>
+        </nav>
+        <script>
+        // Dropdown "About" toggle behavior (desktop-friendly, simple)
+        (function() {
+          var dropdown = document.querySelector('.about-dropdown');
+          if (!dropdown) return;
+
+          var btn = dropdown.querySelector('.dropdown-toggle');
+          var menu = dropdown.querySelector('.dropdown-menu');
+
+          // Open dropdown on button click or focus
+          btn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            var isOpen = menu.style.display === 'block';
+            menu.style.display = isOpen ? 'none' : 'block';
+            btn.setAttribute('aria-expanded', !isOpen);
+          });
+
+          // Close menu when clicking elsewhere
+          document.addEventListener('click', function(e) {
+            if (!dropdown.contains(e.target)) {
+              menu.style.display = 'none';
+              btn.setAttribute('aria-expanded', 'false');
+            }
+          });
+
+          // Optionally: open on mouseenter, close on mouseleave (desktop only)
+          dropdown.addEventListener('mouseenter', function() {
+            if (window.innerWidth > 780) {
+              menu.style.display = 'block';
+              btn.setAttribute('aria-expanded', 'true');
+            }
+          });
+          dropdown.addEventListener('mouseleave', function() {
+            if (window.innerWidth > 780) {
+              menu.style.display = 'none';
+              btn.setAttribute('aria-expanded', 'false');
+            }
+          });
+
+          // Keyboard navigation (Escape key closes)
+          btn.addEventListener('keydown', function(e) {
+            if (e.key === "Escape") {
+              menu.style.display = 'none';
+              btn.setAttribute('aria-expanded', 'false');
+            }
+          });
+        })();
+        </script>
+      </div>
+      <script>
+        (function () {
+          var header = document.getElementById('i4cmg');
+          if (!header) return;
+          var toggleBtn = header.querySelector('#i4cmg-toggle');
+          var nav = header.querySelector('#i4cmg-nav');
+          if (!toggleBtn || !nav) return;
+
+          function closeMenu() {
+            nav.classList.remove('is-open');
+            toggleBtn.setAttribute('aria-expanded', 'false');
+            toggleBtn.setAttribute('aria-label', 'Open menu');
+          }
+
+          toggleBtn.addEventListener('click', function () {
+            var isOpen = nav.classList.toggle('is-open');
+            toggleBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+            toggleBtn.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
+          });
+
+          nav.querySelectorAll('a').forEach(function (link) {
+            link.addEventListener('click', closeMenu);
+          });
+
+          window.addEventListener('resize', function () {
+            if (window.innerWidth > 992) {
+              closeMenu();
+            }
+          });
+        })();
+      </script>
+    </header>
+    <main>
+      <section class="hero-section">
+        <div class="hero-container">
+          <div class="hero-grid">
+            <div class="hero-text-column">
+              <h1 class="hero-heading">Venkateshpura Lake Status Dashboard</h1>
+              <p class="hero-subtitle">Keeping the community informed about our lake. Live indicators for water health, habitat, and cleanliness.</p>
+              <div id="iexuz" class="hero-actions">
+                <a href="#metrics" class="gjs-t-button primary-cta">View Metrics</a>
+                <a href="#lake-insights" class="secondary-cta">See Insights</a>
+              <!-- Quick stats removed as requested. Layout (hero-text on left, hero-image on right) is preserved. -->
+              </div>
+            </div>
+            <div id="i7zc4" class="hero-image-column">
+              <figure id="iyipv" class="hero-figure">
+                <img loading="lazy"
+                     alt="Aerial view of a lake in Bengaluru"
+                     src="hero.jpg"
+                     
+                     id="ixbel"
+                     class="hero-image"/>
+              </figure>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- ===== Improved Chat Widget (history + bubbles) ===== -->
+      <style>
+        /* Center the chat widget and add a beautified box */
+        #chatWidget {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          margin: 32px auto;
+          max-width: 800px;
+          width: 100%;
+          background: #fafcff;
+          border-radius: 16px;
+          box-shadow: 0 8px 32px 0 rgba(60,70,120,0.10), 0 1.5px 8px rgba(106,119,151,0.06);
+          padding: 28px 18px 14px 18px;
+          border: 1.5px solid #e9ecfa;
+        }
+        #chatHistory {
+          width: 100%;
+          min-height: 120px;
+          max-height: 280px;
+          overflow-y: auto;
+          margin: 0 0 16px 0;
+          padding: 0 2px;
+        }
+        #chatControls {
+          display: flex;
+          gap: 10px;
+          width: 100%;
+          margin-top: 0;
+        }
+        #chat_input {
+          flex: 1;
+          border: 1px solid #b6bee7;
+          border-radius: 14px;
+          padding: 9px 14px;
+          font-size: 1rem;
+          font-family: inherit;
+          background: #f7f9ff;
+          transition: border 0.16s;
+        }
+        #chat_input:focus {
+          outline: none;
+          border-color: #406aff;
+          background: #f4f7ff;
+        }
+        /* Style for the Send and Mic buttons */
+        #chat_send, #chat_mic {
+          background: linear-gradient(90deg,#406aff 0,#568cf9 100%);
+          color: #fff;
+          border: none;
+          border-radius: 12px;
+          padding: 0 22px;
+          font-weight: 600;
+          font-size: 1rem;
+          letter-spacing: 0.03em;
+          cursor: pointer;
+          transition: background 0.2s;
+          box-shadow: 0 0.5px 6px rgba(64,106,255,0.13);
+          line-height: 1;
+        }
+        #chat_mic {
+            padding: 0 14px;
+            font-size: 1.1rem;
+        }
+        #chat_send:disabled, #chat_mic:disabled {
+          background: #e1e7fb;
+          color: #7d89b6;
+          cursor: not-allowed;
+        }
+        /* Chat bubbles */
+        .bubble {
+          display: inline-block;
+          word-break: break-word;
+          margin: 8px 0;
+          padding: 9px 15px;
+          max-width: 85%;
+          border-radius: 17px;
+          font-size: 1rem;
+          line-height: 1.5;
+          box-shadow: 0 1.5px 8px 0 rgba(106,119,151,0.07);
+          position: relative; 
+          clear: both;
+        }
+        .bubble.user {
+          background: #d7e3ff;
+          color: #21458b;
+          align-self: flex-end;
+          margin-left: auto;
+          margin-right: 0;
+        }
+        .bubble.bot {
+          background: #f0f5ff;
+          color: #1f375b;
+          align-self: flex-start;
+          margin-right: auto;
+          margin-left: 0;
+          /* Padding is now reset to default */
+        }
+        /* NEW STYLE: Inline Audio Button */
+        .inline-audio-btn {
+            background: none;
+            border: none;
+            color: #406aff; /* Blue to match Send button */
+            cursor: pointer;
+            font-size: 0.9rem; /* Smaller font size to fit inline */
+            padding: 0 0 0 8px; /* Small left margin */
+            margin: 0;
+            display: inline-block;
+            vertical-align: middle;
+            line-height: 1;
+        }
+        .inline-audio-btn:hover {
+            color: #568cf9;
+        }
+        /* Loading dots animation */
+        .loading-dot {
+          display: inline-block;
+          width: 18px;
+          vertical-align: middle;
+          text-align: left;
+        }
+        .loading-dot::after {
+          content: '●●●';
+          color: #7c91cb;
+          letter-spacing: 2px;
+          animation: loadingDotsAnim 1.2s infinite steps(3);
+        }
+        @keyframes loadingDotsAnim {
+          0%    {content:'●  ';}
+          33%   {content:'●● ';}
+          66%   {content:'●●●';}
+          100%  {content:'●  ';}
+        }
+      </style>
+      <div aria-live="polite" id="chatWidget">
+        <h2 id="iu38j" class="gjs-t-h2 metrics-title">Neeru AI</h2>
+        <div id="chatHistory"></div>
+        <div id="chatControls">
+          <input type="text" placeholder="Ask about Venkateshpura Lake (e.g. 'Why is there foam?')" autocomplete="off" id="chat_input" />
+          <button type="button" id="chat_mic" title="Voice Input">🎤</button>
+          <button type="button" id="chat_send">Send</button>
+        </div>
+      </div>
+      <script id="chat_widget_script">
+        (function() {
+          const API_URL = 'https://venkateshpura-chatbot.onrender.com/chat';
+          
+          // Store the current utterance globally for pause/play
+          let currentUtterance = null;
+          let isPlaying = false; 
+
+          const historyEl = document.getElementById('chatHistory');
+          const input = document.getElementById('chat_input');
+          const sendBtn = document.getElementById('chat_send');
+          const micBtn = document.getElementById('chat_mic');
+
+          // ===================================
+          // 1. Text-to-Speech (TTS) Function - Modified for Control
+          // ===================================
+          function speakText(text, buttonElement) {
+            const ss = window.speechSynthesis;
+            if (!('speechSynthesis' in window)) return;
+            
+            // If already speaking the same text, pause/resume
+            if (currentUtterance && ss.speaking) {
+                if (ss.paused) {
+                    ss.resume();
+                    isPlaying = true;
+                    buttonElement.textContent = '⏸️'; // Change to Pause
+                } else {
+                    ss.pause();
+                    isPlaying = false;
+                    buttonElement.textContent = '▶️'; // Change to Play
+                }
+                return;
+            }
+            
+            // If speaking something else, cancel it
+            ss.cancel();
+            
+            const utterance = new SpeechSynthesisUtterance(text);
+            currentUtterance = utterance;
+            isPlaying = true;
+            buttonElement.textContent = '⏸️'; // Initial state: Pause
+
+            // Reset state when speech ends
+            utterance.onend = () => {
+                isPlaying = false;
+                buttonElement.textContent = '▶️'; // Change back to Play
+                currentUtterance = null;
+            };
+
+            // Start speaking
+            ss.speak(utterance);
+          }
+
+          // MODIFIED: Takes text and returns the complete bubble element
+          function createBotBubble(text) {
+            const el = document.createElement('div');
+            el.className = 'bubble bot';
+            
+            // Text content
+            el.appendChild(document.createTextNode(text));
+
+            // Add the optional Play/Pause button
+            if (text && text.trim().length > 0 && 
+                text !== 'No reply.' && 
+                !text.includes('error')) {
+                
+                const playBtn = document.createElement('button');
+                playBtn.className = 'inline-audio-btn';
+                playBtn.textContent = '▶️'; // Initial icon: Play
+                playBtn.title = 'Listen to the reply';
+                
+                // Add click listener to speak/pause
+                playBtn.addEventListener('click', () => {
+                    speakText(text, playBtn);
+                });
+                
+                el.appendChild(playBtn);
+            }
+
+            historyEl.appendChild(el);
+            historyEl.scrollTop = historyEl.scrollHeight;
+            return el;
+          }
+
+          function appendBubble(text, cls) {
+            const el = document.createElement('div');
+            el.className = 'bubble ' + cls;
+            el.textContent = text;
+            historyEl.appendChild(el);
+            historyEl.scrollTop = historyEl.scrollHeight;
+            return el;
+          }
+
+          function appendLoading() {
+            const el = appendBubble('', 'bot');
+            const dot = document.createElement('span');
+            dot.className = 'loading-dot';
+            el.appendChild(dot);
+            historyEl.scrollTop = historyEl.scrollHeight;
+            return el;
+          }
+
+          // 3. Kannada Language Hint Function
+          function isKannada(text) {
+              return /[\u0C80-\u0CFF]/.test(text);
+          }
+
+          async function sendMsg(isVoice = false) {
+            const msg = input.value.trim();
+            if (!msg) return;
+            
+            // Cancel any running speech before sending a new message
+            window.speechSynthesis.cancel();
+            
+            if (isVoice && window.recognition && micBtn.textContent === '🔴 Listening...') {
+                window.recognition.abort();
+            }
+            
+            appendBubble(msg, 'user');
+            input.value = '';
+            input.disabled = true;
+            sendBtn.disabled = true;
+            micBtn.disabled = true; 
+            const loadingEl = appendLoading();
+
+            try {
+              const res = await fetch(API_URL, {
+                method: 'POST',
+                headers: {
+                  'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                  message: msg,
+                  language_hint: isKannada(msg) ? 'Kannada' : 'English' 
+                })
+              });
+
+              if (!res.ok) {
+                const txt = await res.text().catch(() => '(no body)');
+                console.error('Server error', res.status, txt);
+                loadingEl.textContent = 'Server error — see console.';
+              } else {
+                const data = await res.json();
+                const aiReply = data.reply || 'No reply.';
+                
+                // Remove old loading element, then append the new structured bubble
+                historyEl.removeChild(loadingEl);
+                createBotBubble(aiReply);
+              }
+            } catch (err) {
+              console.error('Network error', err);
+              loadingEl.textContent = 'Network error — see console.';
+            } finally {
+              input.disabled = false;
+              sendBtn.disabled = false;
+              micBtn.disabled = false;
+              input.focus();
+              historyEl.scrollTop = historyEl.scrollHeight;
+            }
+          }
+
+          // ===================================
+          // 2. Speech-to-Text (STT) Logic (Unchanged)
+          // ===================================
+          if ('SpeechRecognition' in window || 'webkitSpeechRecognition' in window) {
+              const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+              const recognition = new SpeechRecognition();
+              window.recognition = recognition; 
+
+              recognition.continuous = false; 
+              recognition.lang = 'en-IN'; 
+              
+              recognition.onresult = (event) => {
+                  const spokenText = event.results[0][0].transcript;
+                  input.value = spokenText; 
+                  micBtn.textContent = '🎤'; 
+                  sendMsg(true); 
+              };
+
+              recognition.onerror = (event) => {
+                  console.error('Speech recognition error:', event.error);
+                  micBtn.textContent = '🎤';
+                  input.placeholder = `Voice Error: ${event.error}`;
+                  setTimeout(() => {
+                      input.placeholder = "Ask about Venkateshpura Lake...";
+                  }, 3000);
+              };
+
+              recognition.onend = () => {
+                  if (micBtn.textContent === '🔴 Listening...') {
+                      micBtn.textContent = '🎤';
+                  }
+              };
+
+              micBtn.addEventListener('click', () => {
+                  window.speechSynthesis.cancel();
+                  
+                  try {
+                      recognition.start();
+                      micBtn.textContent = '🔴 Listening...';
+                  } catch (e) {
+                      console.log('Recognition already started or error:', e);
+                  }
+              });
+
+          } else {
+              micBtn.style.display = 'none';
+          }
+          
+          // Original event listeners
+          sendBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            sendMsg();
+          });
+          input.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter') {
+              e.preventDefault();
+              sendMsg();
+            }
+          });
+        })();
+      </script>
+      <!-- Sources-->
+      <button class="source-btn" onclick="showSources()">View Sources (5)</button>
+
+      <div id="sourcesModal" class="modal">
+        <div class="modal-content">
+          <span class="close-btn" onclick="hideSources()">&times;</span>
+          <h3>Sources for This Answer</h3>
+          
+          <ul id="sourceList">
+            <li><a href="URL_1" target="_blank">Source 1: Title or Snippet</a></li>
+            <li><a href="URL_2" target="_blank">Source 2: Title or Snippet</a></li>
+            <li><a href="URL_3" target="_blank">Source 3: Title or Snippet</a></li>
+            <li><a href="URL_4" target="_blank">Source 4: Title or Snippet</a></li>
+            <li><a href="URL_5" target="_blank">Source 5: Title or Snippet</a></li>
+          </ul>
+          
+          <p class="modal-note">Links open in a new tab.</p>
+        </div>
+      </div>
+      <!-- Sources-->
+       <!-- ===== End Chat Widget ===== --><!-- rest of your page (metrics, charts, etc) -->
+      <section>
+        <div class="overview-container">
+          <h2 class="gjs-t-h2 overview-title">Overview</h2>
+          <p class="overview-paragraph">
+            Monitoring Venkateshpura Lake helps protect biodiversity, supports recreation, and informs timely action.
+            <br> This website gives a monthly overview of the lake’s water quality using real data collected across key parameters like pH, Dissolved Oxygen, BOD, COD, TDS, and Turbidity. Each metric is visualised to show how the lake is changing over time, highlighting improvements, seasonal shifts, and any signs of pollution.
+            You can explore interactive charts, check overall Water Quality Index (WQI) trends, and read simple insights that explain what the data means. The goal is to make environmental monitoring transparent, accessible, and useful for students, citizens, and anyone interested in the health of the lake.
+            <br> Using this dashboard, you can also identify plant species around the lakes and understand how each of them contribute to the local ecosystem.
+          </p> 
+        </div>
+      </section>
+      <section id="plant-identifier-section" class="gjs-t-border identifier-section" style="margin:2rem auto;max-width:450px;background:#fafcf8;padding:2rem 1.5rem;border-radius:1.2rem;box-shadow:0 2px 12px rgba(40,66,50,0.06);">
+        <h2 id="plant-identifier-heading" class="gjs-t-h2" style="text-align:center;margin-bottom:1.2rem;color:#296240;letter-spacing:0.01em;font-weight:700;">
+          Plant Identifier
+        </h2>
+        <form id="upload-form" enctype="multipart/form-data" style="display:flex;flex-direction:column;gap:1.2rem;align-items:center;">
+          <label for="upload-input" style="font-weight:500;">Upload a photo of a plant to identify:</label>
+          <input id="upload-input" type="file" name="image" accept="image/*" required style="padding:0.6em 1em;background:#f3f6ee;border-radius:0.6em;border:1px solid #c6dfb0;">
+          <button type="submit" class="gjs-t-button" style="padding:.7em 1.7em;background:#5dc979;color:#fff;font-weight:600;border:none;border-radius:1.6em;cursor:pointer;transition:.15s;">
+            Identify Species
+          </button>
+        </form>
+      </section>
+      
+        <div id="results-area"
+             style="
+             margin:0 auto 2.5rem auto;max-width:460px;
+             margin-top:1.3rem;
+             min-height:70px;
+             background:#f5f8ee;
+             border-radius:1.0em;
+             border: 1.5px solid #d9eccc;
+             box-shadow: 0 1px 5px rgba(46,84,38,0.08);
+             padding:1.2em 1.2em;
+             font-size:1.08em;
+             color:#23513b;
+             line-height:1.6;
+             word-break:break-word;
+             text-align: left;
+             transition: box-shadow 0.15s;">
+        </div>
+        <div id="results-area">
+        </div>
+      
+      <section id="metrics" class="metrics-section">
+        <div id="im5kz" class="metrics-container">
+          <h2 id="iu38j" class="gjs-t-h2 metrics-title">Current Metrics</h2>
+         
+            <!-- pandas ai code start -->
+           <iframe src="https://chat.pandas-ai.com/creations/1b073b80-7c36-492e-a842-2341579e2ef2/Lake_Water_Quality_Dashboard.pxml"
+           style="width:100%;height:2800px;" allowfullscreen></iframe>
+           <!-- pandas ai code end -->
+             <!-- flourish code
+          <div class="flourish-embed flourish-chart" data-src="visualisation/26208981"><script src="https://public.flourish.studio/resources/embed.js"></script><noscript><img src="https://public.flourish.studio/visualisation/26208981/thumbnail" width="100%" alt="chart visualization" /></noscript></div>
+        flourish code end -->
+           <!-- Lake insights panel — drop into your site -->
+
+
+<section id="lake-insights" aria-labelledby="lake-insights-title">
+  <h2 id="iu38j" class="gjs-t-h2 metrics-title">AI Powered Summary</h2>
+
+  <p>
+    Click each card to expand practical actions.
+  </p>
+
+  <div style="display:grid; grid-template-columns:repeat(3, 1fr); gap:40px; margin-top:12px;">
+
+    <!-- DO card (Bad) -->
+    <article class="metric-card bad" data-metric="DO" tabindex="0"
+             style="border-radius:10px; padding:40px; box-shadow:0 6px 18px rgba(0,0,0,0.06); background:linear-gradient(180deg,#fff,#fff); border:1px ; outline:none;">
+      <div style="display:flex; align-items:center; gap:10px;">
+        <div style="font-size:20px; font-weight:700; ">Dissolved Oxygen (DO) — <span style="font-weight:600; font-size:14px; color:#a80000;">Bad</span></div>
+        <div style="margin-left:auto; font-size:13px; color:#666;">Range: <strong>1.0–7.6 mg/L</strong></div>
+      </div>
+      <p style="margin:10px 0 8px 0; color:#333;">
+        Most months are below healthy levels (<strong>5 mg/L</strong>). Low DO indicates heavy organic pollution and algal stress — aquatic life at risk.
+      </p>
+
+      <details style="margin-top:6px;">
+        <summary style="cursor:pointer; font-weight:600;">What to do →</summary>
+        <ul style="margin:8px 0 0 18px; color:#333;">
+          <li>Install targeted aeration (surface aerators) in low-oxygen zones.</li>
+          <li>Identify & stop sewage inflow (inspect drains & inlets).</li>
+          <li>Construct wetland/pretreatment for incoming wastewater.</li>
+        </ul>
+      </details>
+    </article>
+
+    <!-- BOD card (Very Bad) -->
+    <article class="metric-card bad" data-metric="BOD" tabindex="0"
+             style="border-radius:10px; padding:40px; box-shadow:0 6px 18px rgba(0,0,0,0.06); border:1px ">
+      <div style="display:flex; align-items:center; gap:10px;">
+        <div style="font-size:20px; font-weight:700;">BOD — <span style="font-weight:600; font-size:14px;  color:#b03a00;">Very Bad</span></div>
+        <div style="margin-left:auto; font-size:13px; color:#666;">Mean: <strong>~16 mg/L</strong></div>
+      </div>
+      <p style="margin:10px 0 8px 0; color:#333;">
+        Biological Oxygen Demand is far above healthy levels (&lt;3 mg/L). Indicates large amounts of decomposing organic matter — most likely untreated sewage.
+      </p>
+
+      <details style="margin-top:6px;">
+        <summary style="cursor:pointer;  font-weight:600;">What to do →</summary>
+        <ul style="margin:8px 0 0 18px; color:#333;">
+          <li>Locate sewage entry points and seal/redirect them to treatment.</li>
+          <li>Build small-scale STPs or constructed wetlands at key inlets.</li>
+          <li>Regularly remove accumulated organic sludge (desilting).</li>
+        </ul>
+      </details>
+    </article>
+
+    <!-- COD card (Very Bad) -->
+    <article class="metric-card bad" data-metric="COD" tabindex="0"
+             style="border-radius:10px; padding:40px; box-shadow:0 6px 18px rgba(0,0,0,0.06); border:1px ">
+      <div style="display:flex; align-items:center; gap:10px;">
+        <div style="font-size:20px; font-weight:700; ">COD — <span style="font-weight:600; font-size:14px; color:#8b2d00;">Very Bad</span></div>
+        <div style="margin-left:auto; font-size:13px; color:#666;">Mean: <strong>~117 mg/L</strong></div>
+      </div>
+      <p style="margin:10px 0 8px 0; color:#333;">
+        Chemical Oxygen Demand is high, showing both organic and chemical pollution. Confirms serious untreated inflows.
+      </p>
+
+      <details style="margin-top:6px;">
+        <summary style="cursor:pointer; font-weight:600;">What to do →</summary>
+        <ul style="margin:8px 0 0 18px; color:#333;">
+          <li>Monitor industrial & household discharges into the catchment.</li>
+          <li>Implement simple pre-treatment for strong drains (settling tanks).</li>
+          <li>Public awareness — reduce use of harsh chemicals and detergents.</li>
+        </ul>
+      </details>
+    </article>
+
+    <!-- Turbidity card (Bad) -->
+    <article class="metric-card warn" data-metric="Turbidity" tabindex="0"
+             style="border-radius:10px; padding:40px; box-shadow:0 6px 18px rgba(0,0,0,0.04); border:1px ">
+      <div style="display:flex; align-items:center; gap:10px;">
+        <div style="font-size:20px; font-weight:700; ">Turbidity — <span style="font-weight:600; font-size:14px; color:#8a6000;">Bad / Variable</span></div>
+        <div style="margin-left:auto; font-size:13px; color:#666;">Peaks: <strong>~100 mg/L</strong></div>
+      </div>
+      <p style="margin:10px 0 8px 0; color:#333;">
+        Several months are very turbid (cloudy). Causes include silt, algae, and runoff events during monsoon.
+      </p>
+
+      <details style="margin-top:6px;">
+        <summary style="cursor:pointer; font-weight:600;">What to do →</summary>
+        <ul style="margin:8px 0 0 18px; color:#333;">
+          <li>Install silt traps/gabions on major inflow channels.</li>
+          <li>Plant buffer vegetation around embankments to reduce runoff.</li>
+          <li>Desilt areas where suspended solids accumulate.</li>
+        </ul>
+      </details>
+    </article>
+
+    <!-- TDS card (Warn / Data issue) -->
+    <article class="metric-card warn" data-metric="TDS" tabindex="0"
+             style="border-radius:10px; padding:40px; box-shadow:0 6px 18px rgba(0,0,0,0.04); border:1px  ">
+      <div style="display:flex; align-items:center; gap:10px;">
+        <div style="font-size:20px; font-weight:700; ">TDS — <span style="font-weight:600; font-size:14px; color:#6a5a00;">Erratic</span></div>
+        <div style="margin-left:auto; font-size:13px; color:#666;">Range: <strong>7 – 890 mg/L</strong></div>
+      </div>
+      <p style="margin:10px 0 8px 0; color:#333;">
+        TDS shows extreme variation. A sudden very low reading (7 mg/L) is likely a sampling/data error; high peaks suggest saline/chemical inputs.
+      </p>
+
+      <details style="margin-top:6px;">
+        <summary style="cursor:pointer; font-weight:600;">What to do →</summary>
+        <ul style="margin:8px 0 0 18px; color:#333;">
+          <li>Verify odd lab values (repeat sampling for suspicious months).</li>
+          <li>Test for detergents/salts in high-TDS months.</li>
+          <li>Limit discharge of high-salinity or detergent-rich wastewater into drains.</li>
+        </ul>
+      </details>
+    </article>
+
+    <!-- pH card (OK) -->
+    <article class="metric-card ok" data-metric="pH" tabindex="0"
+             style="border-radius:10px; padding:40px; box-shadow:0 6px 18px rgba(0,0,0,0.03); border:1px">
+      <div style="display:flex; align-items:center; gap:10px;">
+        <div style="font-size:20px; font-weight:700; ">pH — <span style="font-weight:600; font-size:14px; color:#1a7a28;">Mostly OK</span></div>
+        <div style="margin-left:auto; font-size:13px; color:#666;">Range: <strong>6.9 – 8.2</strong></div>
+      </div>
+      <p style="margin:10px 0 8px 0; color:#333;">
+        pH is within acceptable range. Slight alkalinity in some months suggests algal activity or detergent inflow.
+      </p>
+
+      <details style="margin-top:6px;">
+        <summary style="cursor:pointer;  font-weight:600;">What to do →</summary>
+        <ul style="margin:8px 0 0 18px; color:#333;">
+          <li>Reduce nutrient inflow to limit algal growth.</li>
+          <li>Target detergent-rich drains for remediation.</li>
+          <li>Monitor pH monthly to spot long-term shifts.</li>
+        </ul>
+      </details>
+    </article>
+
+  </div>
+
+  <!-- Action buttons -->
+  <div style="display:flex; gap:8px; margin-top:16px;">
+    <button class="copy-summary" aria-label="Copy summary">Copy short summary</button>
+    <button class="report-issue-button">Download action plan (TXT)</button>
+  </div>
+
+  <small style="display:block; margin-top:10px; color:#666;">Generated from monthly measurements. For critical decisions, verify with targeted sampling and local authorities.</small>
+</section>
+
+<script>
+  // Copy a prebuilt one-line summary to clipboard
+  document.getElementById('copy-summary').addEventListener('click', () => {
+    const text = "Venkateshpura Lake: DO consistently low (fish at risk), very high BOD/COD (untreated sewage), high turbidity (silt/algae), erratic TDS (possible sampling error/chemical inputs). Recommend aeration, locate & treat sewage inlets, desilting, and buffer planting.";
+    navigator.clipboard?.writeText(text).then(() => {
+      alert('Summary copied to clipboard');
+    }).catch(() => alert('Could not copy — your browser blocked clipboard access.'));
+  });
+
+  // Generate a small action plan file and download
+  document.getElementById('download-action-plan').addEventListener('click', () => {
+    const plan = [
+      "Venkateshpura Lake — Action Plan",
+      "",
+      "1. Immediate (0-3 months):",
+      "- Deploy surface aerators at low-DO zones.",
+      "- Identify and temporarily block obvious sewage outlets.",
+      "- Repeat sampling for months with odd TDS values.",
+      "",
+      "2. Short term (3-12 months):",
+      "- Construct small STP or constructed wetland for main inlets.",
+      "- Install silt traps at inflow channels.",
+      "- Community awareness campaign to reduce detergent/chemical discharge.",
+      "",
+      "3. Long term (12+ months):",
+      "- Regular desilting schedule.",
+      "- Rehabilitate catchment with buffer vegetation.",
+      "- Continuous monitoring and public reporting dashboard.",
+      "",
+      "Notes:",
+      "- Verify lab results where values look impossible (e.g., TDS = 7 mg/L).",
+      "- Coordinate with local civic body for legal & technical support."
+    ].join("\\n");
+
+    const blob = new Blob([plan], {type: 'text/plain'});
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'Jakkur_Lake_Action_Plan.txt';
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+    URL.revokeObjectURL(url);
+  });
+
+  // minor keyboard accessibility: toggle details on Enter or Space when card focused
+  document.querySelectorAll('.metric-card').forEach(card => {
+    card.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        const details = card.querySelector('details');
+        if (details) details.open = !details.open;
+        e.preventDefault();
+      }
+    });
+  });
+</script>
+
+<style>
+  /* small responsive tweak */
+  @media (max-width:520px){
+    #lake-insights { padding:12px; }
+  }
+</style>
+
+         <!-- <div class="metrics-grid">
+            <article class="metric-card-wqi">
+              <div class="metric-header">
+                <div class="metric-title-group">
+                  <img alt="Water Drops Icon" loading="lazy" width="18" height="18" src="https://api.iconify.design/lucide-droplets.svg"/>
+                  <h3 class="metric-title-text">Water Quality Index (WQI)</h3>
+                </div>
+                <span class="metric-status-badge">Good</span>
+              </div>
+              <p class="metric-description">Composite score of water parameters.</p>
+              <div class="progress-bar-wrapper">
+                <div class="progress-track">
+                  <div class="progress-fill"></div>
+                </div>
+                <div class="progress-labels">
+                  <span>72 / 100</span>
+                  <span>Updated 2h ago</span>
+                </div>
+              </div>
+            </article>
+            <article class="metric-card-oip">
+              <div class="metric-header">
+                <div class="metric-title-group">
+                  <img alt="Wind Icon" loading="lazy" width="18" height="18" src="https://api.iconify.design/lucide-wind.svg"/>
+                  <h3 class="metric-title-text">Oxygenation (OIP)</h3>
+                </div>
+                <span class="metric-status-badge">Stable</span>
+              </div>
+              <p id="i1wdoh" class="metric-description">Dissolved oxygen proxy, higher is better.</p>
+              <div class="metric-value-row">
+                <div class="metric-value-group">
+                  <span class="metric-value">6.8</span>
+                  <span class="metric-unit">mg/L</span>
+                </div>
+                <div class="metric-trend-group">
+                  <img alt="Trending Up" loading="lazy" width="18" height="18" src="https://api.iconify.design/lucide-arrow-up-right.svg"/>
+                  <span class="metric-trend-text">+0.3</span>
+                </div>
+              </div>
+              <div class="sparkline-wrapper">
+                <svg viewBox="0 0 100 30" class="sparkline-svg">
+                  <polyline fill="none" stroke="currentColor" stroke-width="2" points="0,22 10,18 20,20 30,15 40,17 50,14 60,12 70,10 80,12 90,9 100,11"></polyline>
+                </svg>
+              </div>
+            </article>
+            <article class="metric-card-volume">
+              <div class="metric-header">
+                <div class="metric-title-group">
+                  <img alt="Gauge Icon" loading="lazy" width="18" height="18" src="https://api.iconify.design/lucide-gauge.svg"/>
+                  <h3 class="metric-title-text">Water Volume</h3>
+                </div>
+                <span class="metric-status-badge">Below avg</span>
+              </div>
+              <p class="metric-description">Current volume vs seasonal average.</p>
+              <div class="comparison-bars">
+                <div>
+                  <div class="current-volume-label">Current</div>
+                  <div class="current-volume-track">
+                    <div class="current-volume-fill"></div>
+                  </div>
+                  <div class="current-volume-value">0.82 Mm³</div>
+                </div>
+                <div>
+                  <div class="avg-volume-label">Seasonal Avg</div>
+                  <div class="avg-volume-track">
+                    <div class="avg-volume-fill"></div>
+                  </div>
+                  <div class="avg-volume-value">1.10 Mm³</div>
+                </div>
+              </div>
+            </article>
+            <article class="metric-card-algal-bloom">
+              <div class="metric-header">
+                <div class="metric-title-group">
+                  <img alt="Sprout Icon" loading="lazy" width="18" height="18" src="https://api.iconify.design/lucide-sprout.svg"/>
+                  <h3 class="metric-title-text">Algal Bloom</h3>
+                </div>
+                <span class="metric-status-badge">Mild</span>
+              </div>
+              <p class="metric-description">Surface bloom levels from visual and sensor checks.</p>
+              <div class="algae-row">
+                <div class="algae-indicator-group">
+                  <span class="algae-dot"></span>
+                  <span class="algae-label">Localized near SW inlet</span>
+                </div>
+                <span class="algae-percent">18% coverage</span>
+              </div>
+              <div class="algae-sparkline-wrapper">
+                <svg viewBox="0 0 100 30" class="algae-sparkline-svg">
+                  <polyline fill="none" stroke="currentColor" stroke-width="2" points="0,8 10,10 20,12 30,9 40,11 50,14 60,16 70,18 80,19 90,21 100,22"></polyline>
+                </svg>
+              </div>
+            </article>
+            <article class="metric-card-lantana">
+              <div class="metric-header">
+                <div class="metric-title-group">
+                  <img alt="Leaf Icon" loading="lazy" width="18" height="18" src="https://api.iconify.design/lucide-leaf.svg"/>
+                  <h3 class="metric-title-text">Lantana Detection</h3>
+                </div>
+                <span class="metric-status-badge">Present</span>
+              </div>
+              <p class="metric-description">Invasive Lantana camara along banks.</p>
+              <div class="lantana-row">
+                <div class="lantana-coverage-group">
+                  <span class="lantana-dot"></span>
+                  <span class="lantana-label">Perimeter patches</span>
+                </div>
+                <span class="lantana-percent">9% shoreline</span>
+              </div>
+              <figure class="lantana-map-figure">
+                <img loading="lazy"
+                     alt="Vegetation map near lake edge"
+                     src="https://app.grapesjs.com/api/assets/random-image?query=%22vegetation%20map%20satellite%20shoreline%22&amp;w=640&amp;h=320"
+                     class="lantana-map-image"/>
+                <figcaption class="lantana-figcaption">
+                  Highlighted zones indicate suspected lantana clusters
+                </figcaption>
+              </figure>
+            </article>
+            <article class="metric-card-littering">
+              <div class="metric-header">
+                <div class="metric-title-group">
+                  <img alt="Trash Icon" loading="lazy" width="18" height="18" src="https://api.iconify.design/lucide-trash-2.svg"/>
+                  <h3 class="metric-title-text">Littering</h3>
+                </div>
+                <span class="metric-status-badge">Moderate</span>
+              </div>
+              <p class="metric-description">Reports and detections within last 30 days.</p>
+              <div class="litter-row">
+                <div class="litter-count-group">
+                  <img alt="Activity Icon" loading="lazy" width="16" height="16" src="https://api.iconify.design/lucide-activity.svg"/>
+                  <span class="litter-count-value">42 incidents</span>
+                </div>
+                <div class="litter-trend-group">
+                  <img alt="Trending Up" loading="lazy" width="16" height="16" src="https://api.iconify.design/lucide-trending-up.svg"/>
+                  <span class="litter-trend-text">+12%</span>
+                </div>
+              </div>
+              <div class="litter-gallery">
+                <figure class="litter-photo-figure">
+                  <img loading="lazy"
+                       alt="Litter near walkway"
+                       src="https://app.grapesjs.com/api/assets/random-image?query=%22lake%20litter%20bottle%20walkway%22&amp;w=320&amp;h=220"
+                       class="litter-photo-image"/>
+                  <figcaption class="litter-photo-caption">Walkway (N side)</figcaption>
+                </figure>
+                <figure class="litter-photo-figure">
+                  <img loading="lazy"
+                       alt="Community cleanup at lake"
+                       src="https://app.grapesjs.com/api/assets/random-image?query=%22lake%20cleanup%20volunteer%20picking%20litter%22&amp;w=320&amp;h=220"
+                       class="litter-photo-image"/>
+                  <figcaption class="litter-photo-caption">Cleanup in progress</figcaption>
+                </figure>
+              </div>
+            </article>
+          </div>
+        </div> 
+      </section> -->
+      <!--
+      <section id="trends" class="trends-section">
+        <div class="trends-container">
+          <h2 class="gjs-t-h2 trends-title">Trends</h2>
+          <div class="trends-grid">
+            <article class="trend-card-wqi">
+              <div class="trend-header">
+                <div class="trend-title-group">
+                  <img alt="Drop Icon" loading="lazy" width="18" height="18" src="https://api.iconify.design/lucide-droplet.svg"/>
+                  <h3 class="trend-title-text">WQI - Last 12 weeks</h3>
+                </div>
+                <span class="trend-value">Avg: 69</span>
+              </div>
+              <svg viewBox="0 0 100 40" class="trend-chart-svg">
+                <rect x="0" y="0" width="100" height="40" fill="#f8fafc"></rect>
+                <polyline fill="none" stroke="currentColor" stroke-width="2" points="0,32 8,30 16,31 24,28 32,26 40,24 48,22 56,20 64,18 72,19 80,17 88,15 96,16 100,15"></polyline>
+              </svg>
+            </article>
+            <article class="trend-card-oip">
+              <div class="trend-header">
+                <div class="trend-title-group">
+                  <img alt="Wind Icon" loading="lazy" width="18" height="18" src="https://api.iconify.design/lucide-wind.svg"/>
+                  <h3 class="trend-title-text">OIP - Last 12 weeks</h3>
+                </div>
+                <span class="trend-value">Avg: 6.4 mg/L</span>
+              </div>
+              <svg viewBox="0 0 100 40" class="trend-chart-svg">
+                <rect x="0" y="0" width="100" height="40" fill="#f8fafc"></rect>
+                <polyline fill="none" stroke="currentColor" stroke-width="2" points="0,28 8,27 16,26 24,24 32,23 40,21 48,20 56,19 64,18 72,18 80,17 88,16 96,16 100,15"></polyline>
+              </svg>
+            </article>
+            <article class="trend-card-volume">
+              <div class="trend-header">
+                <div class="trend-title-group">
+                  <img alt="Gauge Icon" loading="lazy" width="18" height="18" src="https://api.iconify.design/lucide-gauge.svg"/>
+                  <h3 class="trend-title-text">Volume - Last 12 months</h3>
+                </div>
+                <span class="trend-value">Avg: 0.93 Mm³</span>
+              </div>
+              <svg viewBox="0 0 100 40" class="trend-chart-svg">
+                <rect x="0" y="0" width="100" height="40" fill="#f8fafc"></rect>
+                <polyline fill="none" stroke="currentColor" stroke-width="2" points="0,30 8,28 16,27 24,26 32,24 40,22 48,20 56,22 64,24 72,26 80,28 88,30 96,32 100,31"></polyline>
+              </svg>
+            </article>
+          </div>
+        </div>
+      </section> -->
+    
+      <section id="alerts" class="alerts-section">
+        <div id="iv9v3z" class="alerts-container">
+          <div class="alerts-header-row">
+            <h2 class="gjs-t-h2 alerts-title">Alerts and Recommendations</h2>
+            <a href="#report" class="gjs-t-button alerts-cta">Submit Observation</a>
+          </div>
+          <div class="alerts-grid">
+            <article class="alert-card-algae">
+              <div class="alert-header">
+                
+                <div class="alert-content">
+                  <h3 class="alert-title">Elevated algal activity near SW inlet</h3>
+                  <p>Avoid fishing and direct contact in affected zones. Report any froth/foam sightings.</p>
+                  <div class="alert-tags">
+                    <span class="alert-tag">Mild bloom</span>
+                    <span class="alert-tag">Last check: 1h ago</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+            <article class="alert-card-litter">
+              <div class="alert-header">
+               
+                <div class="alert-content">
+                  <h3 class="alert-title">Increased littering along northern walkway</h3>
+                  <p >Use designated bins. Volunteers needed for weekend cleanup.</p>
+                  <div class="alert-tags">
+                    <span class="alert-tag">42 reports</span>
+                    <span class="alert-tag">Cleanup: Sat 7:30 AM</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+          </div>
+          <div class="recommendations-grid">
+            <article class="recommendation-card">
+              <div class="recommendation-header">
+               
+                <h3 class="recommendation-title">Join community cleanup</h3>
+              </div>
+              <p> On 11 November 8am (Gloves and bags provided)</p>
+            </article>
+            <article class="recommendation-card">
+              <div class="recommendation-header">
+                
+                <h3 class="recommendation-title">Avoid feeding fish</h3>
+              </div>
+              <p>Excess nutrients can worsen algal blooms.</p>
+            </article>
+            <article class="recommendation-card">
+              <div class="recommendation-header">
+                
+                <h3 class="recommendation-title">Report invasive plants</h3>
+              </div>
+              <p>Flag lantana patches to help restoration teams.</p>
+            </article>
+            <article class="recommendation-card">
+              <div class="recommendation-header">
+               
+                <h3 class="recommendation-title">Share observations</h3>
+              </div>
+              <p class="recommendation-description">
+                Photos and exact location improve response time.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+      <section id="report" class="report-section">
+        <div id="i25fjv" class="report-container">
+          <div class="report-grid">
+            <div class="report-card">
+              <h3 class="report-title">Report an issue</h3>
+              <p class="report-description">Notice algal blooms, littering, or invasive plants? Share details to help us act.</p>
+              <form method="get" class="report-form">
+                <div class="form-field">
+                  <label class="form-label">Name</label>
+                  <input type="text" placeholder="Your name" class="form-input" style="border:1px solid #eff1f3;"/>
+                </div>
+                <div class="form-field">
+                  <label class="form-label">Email</label>
+                  <input type="email" placeholder="you@example.com" class="form-input" style="border:1px solid #eff1f3;"/>
+                </div>
+                <div class="form-field">
+                  <label class="form-label">Category</label>
+                  <select type="text" id="i343gf" class="form-select" style="border:1px solid #eff1f3;">
+                    <option>Algal bloom</option>
+                    <option>Littering</option>
+                    <option>Lantana</option>
+                    <option>Other</option>
+                  </select>
+                </div>
+                <div class="form-field">
+                  <label class="form-label">Details</label>
+                  <textarea rows="4" placeholder="Describe location, severity, and any photos you can share." class="form-textarea" style="border:1px solid #eff1f3;"></textarea>
+                </div>
+                <div class="form-actions">
+                  <button type="submit" class="gjs-t-button form-submit-button">Send</button>
+                  <a href="https://wa.me/910000000000?text=Venkateshpura%20Lake%20Report" class="gjs-t-link form-whatsapp-link">Report via WhatsApp</a>
+                </div>
+              </form>
+            </div>
+            <aside id="i5kvvi" class="contact-aside">
+              <h4 class="contact-title">Contacts</h4>
+              <ul class="contact-list">
+                <li class="contact-item">
+                  <img alt="Mail Icon" loading="lazy" width="16" height="16" src="https://api.iconify.design/lucide-mail.svg"/>
+                  <a href="mailto:lakewatch@community.org" class="gjs-t-link">lakewatch@community.org</a>
+                </li>
+                <li class="contact-item">
+                  <img alt="Phone Icon" loading="lazy" width="16" height="16" src="https://api.iconify.design/lucide-phone.svg"/>
+                  <a href="tel:+919000000000" class="gjs-t-link">+91 90000 00000</a>
+                </li>
+                <li class="contact-item">
+                  <img alt="Link Icon" loading="lazy" width="16" height="16" src="https://api.iconify.design/lucide-link.svg"/>
+                  <a href="https://bengaluruurban.nic.in/" target="_blank" rel="noopener" class="gjs-t-link">BBMP/Environment Dept</a>
+                </li>
+              </ul>
+             
+            </aside>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="site-footer">
+      <div class="footer-container">
+        <div>
+          <h4 class="footer-title">About</h4>
+          <p class="footer-text">Community-led initiative to protect and restore Venkateshpura Lake through monitoring, reporting, and awareness.</p>
+        </div>
+        <div>
+          <h4 class="footer-title">Navigate</h4>
+          <ul class="footer-nav-list">
+            <li><a href="./index.html" class="gjs-t-link">Dashboard</a></li>
+            <li><a href="./history.html" class="gjs-t-link">History</a></li>
+            <li><a href="./flora-and-fauna.html" class="gjs-t-link">Flora &amp; Fauna</a></li>
+            <li><a href="./alerts.html" class="gjs-t-link">Alerts</a></li>
+            <li><a href="./report-issue.html" class="gjs-t-link">Report Issue</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-title">Sources</h4>
+          <dl class="footer-contacts-list">
+            <div class="footer-contact-item">
+              <dd><a href="https://data.opencity.in/dataset/bengaluru-lake-monthly-water-quality-reports" class="gjs-t-link">Open City: Urban Data Portal</a></dd>
+            </div>
+            <div class="footer-contact-item">
+              <dd><a href="https://plantnet.org/en/" class="gjs-t-link">Pl@ntNet</a></dd>
+            </div>
+          </dl>
+        </div>
+        <div>
+          <h4 class="footer-title">Contacts</h4>
+          <dl class="footer-contacts-list">
+            <div class="footer-contact-item">
+              <dt class="footer-contact-term">Community Group</dt>
+              <dd><a href="mailto:lakecare@example.org" class="gjs-t-link">lakecare@example.org</a></dd>
+            </div>
+            <div class="footer-contact-item">
+              <dt class="footer-contact-term">Civic Helpline</dt>
+              <dd><a href="tel:+91112" class="gjs-t-link">112</a></dd>
+            </div>
+          </dl>
+        </div>
+      </div>
+      <div class="footer-bottom-bar">
+        <p>© <span>2025</span> Venkateshpura Lake Initiative. All rights reserved.</p>
+      </div>
+    </footer>
+    <script src="identification.js">
+      </script>
+    <script type="text/javascript">
+      function googleTranslateElementInit() {
+        new google.translate.TranslateElement({pageLanguage: 'en', includedLanguages: 'kn', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+      }
+      </script>
+      <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+      <script>
+        function showSources() {
+  document.getElementById('sourcesModal').style.display = 'block';
+}
+
+function hideSources() {
+  document.getElementById('sourcesModal').style.display = 'none';
+}
+
+// Close the modal if the user clicks anywhere outside of it
+window.onclick = function(event) {
+  const modal = document.getElementById('sourcesModal');
+  if (event.target == modal) {
+    modal.style.display = 'none';
+  }
+}
+
+// --- Dynamic Source Handling (IMPORTANT) ---
+// When your chatbot generates a response, you need a function 
+// to update the source list inside the modal.
+
+function updateSources(sourcesArray) {
+    const listElement = document.getElementById('sourceList');
+    listElement.innerHTML = ''; // Clear previous sources
+    
+    // Check if there are sources
+    if (sourcesArray && sourcesArray.length > 0) {
+        sourcesArray.forEach((source, index) => {
+            const listItem = document.createElement('li');
+            const link = document.createElement('a');
+            
+            // source is an object like: { url: '...', title: '...' }
+            link.href = source.url; 
+            link.textContent = `Source ${index + 1}: ${source.title}`;
+            link.target = '_blank'; // Open link in new tab
+            
+            listItem.appendChild(link);
+            listElement.appendChild(listItem);
+        });
+        
+        // Update the button text to show the count
+        document.querySelector('.source-btn').textContent = `View Sources (${sourcesArray.length})`;
+        
+        // Make the button visible if it was hidden
+        document.querySelector('.source-btn').style.display = 'block';
+
+    } else {
+        // Hide the button if there are no sources
+        document.querySelector('.source-btn').style.display = 'none';
+    }
+}
+
+
+// --- EXAMPLE USAGE ---
+// This is how you would call the update function after a response is generated.
+const sampleSources = [
+{ url: 'https://doi.org/10.3390/rs12223843', title: 'Spatio-Temporal Dynamics of Algae and Macrophyte Cover in Urban Lakes (Bareuther et al., 2020)' },
+{ url: 'https://www.bengalurusustainabilityforum.org/bangalore-lake-wetlands-management-conservation/', title: 'Lake Management & Conservation (Bengaluru Sustainability Forum, 2024)' },
+{ url: 'https://biometrust.org/wp-content/uploads/2017/01/Bangalore-Lakes-Biome-Dec-2016.pdf', title: 'Bangalore Lakes (Biome Environmental Trust, 2016)' },
+{ url: 'https://citizenmatters.in/bengaluru-lakes-system-functions-sustainability/', title: 'Why Bengaluru Must Preserve and Restore Its Lakes (Bhat, 2025)' },
+{ url: 'https://doi.org/10.1007/s10661-021-09131-w', title: 'Impact of Urbanisation on Lakes: WQI & OIP Study (Birawat et al., 2021)' },
+{ url: 'https://doi.org/10.1093/biosci/biaa162', title: 'Digital Platforms for Community-Based Monitoring (Johnson et al., 2021)' },
+{ url: 'https://citizenmatters.in/bengaluru-hebbal-lakes-mapping-data-atree/', title: 'Cascading Lakes in Hebbal & Drying Patterns (Kulranjan, 2022)' },
+{ url: 'https://doi.org/', title: 'Urban Transformation of Lakes: Yele Mallappa Shetty Lake Series (Mampilamthoda & Chinnasamy, 2024)' },
+{ url: 'https://www.iipa.org.in/cms/public/uploads/422511679029933.pdf', title: 'Civic Groups Engagement in Saving Bengaluru Lakes (Mandal & Manasi, 2022)' },
+{ url: 'https://doi.org/10.1080/19463138.2014.982124', title: 'Effects of Urbanisation on Lakes as Commons (Mundoli et al., 2014)' },
+{ url: 'https://', title: 'Bangalore Lakes Information System (BLIS) for Sustainable Management (Ramachandra et al., 2024)' },
+{ url: 'https://', title: 'Efficacy of Rejuvenation of Lakes in Bengaluru (Ramachandra et al., 2020)' },
+{ url: 'https://', title: 'Nutrients Load and Eutrophication in Bengaluru Urban Lakes (Veenashree et al., 2018)' }
+];
+
+// Uncomment the line below to test the function with the sample data
+updateSources(sampleSources);
+      </script>
+  </body>
+</html>
+

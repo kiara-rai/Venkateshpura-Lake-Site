@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Report an Issue • Venkateshpura Lake</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="robots" content="index,follow">
+    <meta name="generator" content="GrapesJS Studio">
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin=""/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""/>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Manrope:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="./style.css">
+  </head>
+  <body id="ik5mygk" class="gjs-t-body cls-7841rd">
+    <header class="site-header" id="iwqwale">
+      <div class="header-container">
+        <a href="./index.html" class="gjs-t-link brand-link">
+          <div class="brand-group">
+            <span class="logo">Venkateshpura Lake</span>
+          </div>
+        </a>
+        <nav class="primary-navigation">
+          <a href="./index.html" class="gjs-t-link nav-link-dashboard">Dashboard</a>
+          
+          <div class="dropdown-nav about-dropdown" style="display:inline-block; position:relative;">
+            <button type="button" class="gjs-t-link nav-link-dashboard dropdown-toggle" aria-haspopup="true" aria-expanded="false" style="background:none; border:none; cursor:pointer;">
+              About &#9662;
+            </button>
+            <ul class="dropdown-menu" style="display:none; position:absolute; left:0; top:100%; min-width:180px; background:white; box-shadow:0 2px 10px rgba(0,0,0,0.08); border-radius:0.4em; z-index:1000; margin:0; padding:0;">
+              <li style="list-style:none; margin:0;"><a href="./history.html" class="gjs-t-link nav-link-dashboard" style="display:block; padding:0.65em 1.2em;">History</a></li>
+              <li style="list-style:none; margin:0;"><a href="./flora-and-fauna.html" class="gjs-t-link nav-link-dashboard" style="display:block; padding:0.65em 1.2em;">Flora and Fauna</a></li>
+              <li style="list-style:none; margin:0;"><a href="./importance.html" class="gjs-t-link nav-link-dashboard" style="display:block; padding:0.65em 1.2em;">Importance of Lakes</a></li>
+            </ul>
+          </div>
+
+          <a href="./alerts.html" class="gjs-t-link nav-link-dashboard">Alerts</a>
+          <a href="./report-issue.html" class="gjs-t-button nav-button-report-issue">Report Issue</a>
+          <div style="display: inline-block; position: relative; vertical-align: middle;">
+            <button type="button" 
+              aria-label="Translate page"
+              id="translate-toggle-btn"
+              style="height: 28px; min-width: 38px; background: #eef3f7; border: 1px solid #dde4ee; border-radius: 5px; padding: 2px 10px; display: flex; align-items: center; gap: 6px; cursor: pointer; transition: background 0.18s;">
+              <img src="https://api.iconify.design/ic:round-translate.svg?color=%233c8574" alt="Translate" width="18" height="18" style="vertical-align: middle;" />
+              <span style="font-size: 0.98em; color: #326b6f; font-family: 'Inter',sans-serif;">Translate</span>
+            </button>
+            <div id="google_translate_element"
+                 style="display: none; position: absolute; left: 0; top: 110%; background: #fff; z-index: 1700; border: 1px solid #dde4ee; border-radius: 5px; min-width: 145px; box-shadow: 0 4px 18px rgba(60,133,116,0.12); padding: 9px 12px;">
+            </div>
+          </div>
+          <script>
+          (function() {
+            var container = document.currentScript
+              ? document.currentScript.previousElementSibling
+              : document.querySelector('[id="google_translate_element"]').parentElement;
+            var btn = container.querySelector('#translate-toggle-btn');
+            var panel = container.querySelector('#google_translate_element');
+
+            btn.addEventListener('click', function(e) {
+              e.stopPropagation();
+              var isVisible = panel.style.display === 'block';
+              panel.style.display = isVisible ? 'none' : 'block';
+            });
+
+            // Hide panel when clicking outside
+            document.addEventListener('click', function(e) {
+              if (!container.contains(e.target)) {
+                panel.style.display = 'none';
+              }
+            });
+
+            // Optional: Keyboard navigation (ESC to close)
+            btn.addEventListener('keydown', function(e) {
+              if (e.key === "Escape") {
+                panel.style.display = 'none';
+              }
+            });
+          })();
+          </script>
+        </nav>
+        <script>
+        // Dropdown "About" toggle behavior (desktop-friendly, simple)
+        (function() {
+          var dropdown = document.querySelector('.about-dropdown');
+          if (!dropdown) return;
+
+          var btn = dropdown.querySelector('.dropdown-toggle');
+          var menu = dropdown.querySelector('.dropdown-menu');
+
+          // Open dropdown on button click or focus
+          btn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            var isOpen = menu.style.display === 'block';
+            menu.style.display = isOpen ? 'none' : 'block';
+            btn.setAttribute('aria-expanded', !isOpen);
+          });
+
+          // Close menu when clicking elsewhere
+          document.addEventListener('click', function(e) {
+            if (!dropdown.contains(e.target)) {
+              menu.style.display = 'none';
+              btn.setAttribute('aria-expanded', 'false');
+            }
+          });
+
+          // Optionally: open on mouseenter, close on mouseleave (desktop only)
+          dropdown.addEventListener('mouseenter', function() {
+            if (window.innerWidth > 780) {
+              menu.style.display = 'block';
+              btn.setAttribute('aria-expanded', 'true');
+            }
+          });
+          dropdown.addEventListener('mouseleave', function() {
+            if (window.innerWidth > 780) {
+              menu.style.display = 'none';
+              btn.setAttribute('aria-expanded', 'false');
+            }
+          });
+
+          // Keyboard navigation (Escape key closes)
+          btn.addEventListener('keydown', function(e) {
+            if (e.key === "Escape") {
+              menu.style.display = 'none';
+              btn.setAttribute('aria-expanded', 'false');
+            }
+          });
+        })();
+        </script>
+      </div>
+      <script>
+        (function () {
+          var header = document.getElementById('i4cmg');
+          if (!header) return;
+          var toggleBtn = header.querySelector('#i4cmg-toggle');
+          var nav = header.querySelector('#i4cmg-nav');
+          if (!toggleBtn || !nav) return;
+
+          function closeMenu() {
+            nav.classList.remove('is-open');
+            toggleBtn.setAttribute('aria-expanded', 'false');
+            toggleBtn.setAttribute('aria-label', 'Open menu');
+          }
+
+          toggleBtn.addEventListener('click', function () {
+            var isOpen = nav.classList.toggle('is-open');
+            toggleBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+            toggleBtn.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
+          });
+
+          nav.querySelectorAll('a').forEach(function (link) {
+            link.addEventListener('click', closeMenu);
+          });
+
+          window.addEventListener('resize', function () {
+            if (window.innerWidth > 992) {
+              closeMenu();
+            }
+          });
+        })();
+      </script>
+      </div>
+    </header>
+    <main class="main-content" id="i99r272">
+      <section class="hero-section" id="iu66um3">
+        <div class="hero-header">
+          <h1 class="hero-heading">Report an Issue</h1>
+          <img src="https://api.iconify.design/lucide-flag-triangle-right.svg" alt="Report Icon" width="28" height="28" loading="lazy" class="hero-icon"/>
+        </div>
+        <figure class="gjs-t-border hero-figure">
+          <img src="https://app.grapesjs.com/api/assets/random-image?query=%22lake%20shoreline%20environmental%20monitoring%22&amp;w=1600&amp;h=420" alt="Venkateshpura Lake shoreline" loading="lazy" class="hero-image"/>
+          <figcaption class="hero-figcaption">Help us keep the lake healthy by reporting issues promptly.</figcaption>
+        </figure>
+      </section>
+      <section class="instructions-section">
+        <div class="gjs-t-border instructions-card" id="ikz1jcj">
+          <h2 class="gjs-t-h2 instructions-title">What to report</h2>
+          <ul class="instructions-list">
+            <li>Pollution: oil, chemicals, foam, unusual odors, or discoloration in water.</li>
+            <li>Littering: plastic, glass, construction debris, or dumping activities.</li>
+            <li>Wildlife disturbance: injured animals, illegal fishing, trapping, or feeding.</li>
+            <li>Water quality: sudden fish deaths, algal blooms, or unusual turbidity.</li>
+            <li>Other concerns affecting safety, access, or habitat around the lake.</li>
+          </ul>
+          <p class="instructions-note">Your report helps local authorities and community groups respond faster. We only use contact details to follow up for clarification.</p>
+        </div>
+      </section>
+      <section class="form-section">
+        
+        <form method="post" action="#" novalidate="" class="gjs-t-border issue-reporting-form">
+          <div class="form-grid">
+            <div>
+              <label for="name" class="field-label">Name <span class="field-optional-indicator">(optional)</span></label>
+              <input type="text" id="name" name="name" autocomplete="name" placeholder="Your name" class="text-input"/>
+            </div>
+            <div>
+              <label for="contact" class="field-label">Contact Information <span class="field-optional-indicator">(optional)</span></label>
+              <input type="text" id="contact" name="contact" autocomplete="email" placeholder="Email or phone" class="text-input"/>
+              <small class="field-help">Used only if we need more details about your report.</small>
+            </div>
+            <div>
+              <label for="issueType" class="field-label">Issue Type</label>
+              <select type="text" id="issueType" name="issueType" required class="select-input">
+                <option value="">Select an option</option>
+                <option value="pollution">Pollution</option>
+                <option value="littering">Littering</option>
+                <option value="wildlife">Wildlife disturbance</option>
+                <option value="water-quality">Water quality</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+            <div>
+              <label for="date" class="field-label">Date of Observation</label>
+              <input type="date" id="date" name="date" required class="date-input"/>
+            </div>
+            <div class="form-field-full">
+              <label for="description" class="field-label">Description</label>
+              <textarea id="description" name="description" rows="5" required placeholder="Describe what you observed, including people involved, activity, and any risks." class="textarea-input"></textarea>
+              <small class="field-help">Please avoid sharing personal sensitive information.</small>
+            </div>
+            <div class="form-field-full">
+              <label for="photos" class="field-label">Upload Photos <span class="field-optional-indicator">(optional)</span></label>
+              <input type="file" id="photos" name="photos" accept="image/*" multiple class="file-input"/>
+              <small class="field-help">Attach up to 5 images. Avoid including faces when possible.</small>
+            </div>
+            <div class="form-field-full">
+              <label for="location" class="field-label">Location</label>
+              <input type="text" id="location" name="location" placeholder="Nearest landmark, address, or directions" class="text-input"/>
+              <div class="coordinates-grid">
+                <input type="text" id="latitude" name="latitude" inputmode="decimal" placeholder="Latitude (optional)" class="latitude-input"/>
+                <input type="text" id="longitude" name="longitude" inputmode="decimal" placeholder="Longitude (optional)" class="longitude-input"/>
+              </div>
+              <small class="field-help">You can paste map coordinates if available.</small>
+            </div>
+          </div>
+          <div class="form-actions">
+            <p class="privacy-note">By submitting, you agree that your report may be shared with relevant civic authorities and community groups for action.</p>
+            <button type="submit" class="gjs-t-button submit-button">Submit Report</button>
+          </div>
+          <div role="status" aria-live="polite" class="gjs-t-border form-success-message">
+            <div class="success-content">
+              <img src="https://api.iconify.design/lucide-badge-check.svg" alt="Success" width="22" height="22" loading="lazy" class="success-icon"/>
+              <div>
+                <p class="success-title">Thank you for your report.</p>
+                <p class="success-description">We’ve received your submission. If you provided contact details, we may reach out for more information.</p>
+              </div>
+            </div>
+          </div>
+        </form>
+      </section>
+      <aside class="helpful-links-aside">
+        <div class="gjs-t-border helpful-card">
+          <h3 class="helpful-title">Need urgent assistance?</h3>
+          <ul class="helpful-list">
+            <li>Emergency Services: 112</li>
+            <li>Fire Services: 101</li>
+            <li>Wildlife concerns: Contact local Forest Department helpline</li>
+          </ul>
+        </div>
+      </aside>
+    </main>
+    <footer class="site-footer">
+      <div class="footer-container">
+        <div>
+          <h4 class="footer-title">About</h4>
+          <p class="footer-text">Community-led initiative to protect and restore Venkateshpura Lake through monitoring, reporting, and awareness.</p>
+        </div>
+        <div>
+          <h4 class="footer-title">Navigate</h4>
+          <ul class="footer-nav-list">
+            <li><a href="./index.html" class="gjs-t-link">Dashboard</a></li>
+            <li><a href="./history.html" class="gjs-t-link">History</a></li>
+            <li><a href="./flora-and-fauna.html" class="gjs-t-link">Flora &amp; Fauna</a></li>
+            <li><a href="./alerts.html" class="gjs-t-link">Alerts</a></li>
+            <li><a href="./report-issue.html" class="gjs-t-link">Report Issue</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-title">Contacts</h4>
+          <dl class="footer-contacts-list">
+            <div class="footer-contact-item">
+              <dt class="footer-contact-term">Community Group</dt>
+              <dd><a href="mailto:lakecare@example.org" class="gjs-t-link">lakecare@example.org</a></dd>
+            </div>
+            <div class="footer-contact-item">
+              <dt class="footer-contact-term">Civic Helpline</dt>
+              <dd><a href="tel:+91112" class="gjs-t-link">112</a></dd>
+            </div>
+          </dl>
+        </div>
+      </div>
+      <div class="footer-bottom-bar">
+        <p>© <span>2025</span> Venkateshpura Lake Initiative. All rights reserved.</p>
+      </div>
+    </footer>
+    <script type="text/javascript">
+      function googleTranslateElementInit() {
+        new google.translate.TranslateElement({pageLanguage: 'en', includedLanguages: 'kn', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+      }
+      </script>
+      <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+  </body>
+</html>

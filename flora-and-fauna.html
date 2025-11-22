@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head id="iapn5l">
+    <title id="i9dppz">Biodiversity Around Venkateshpura Lake</title>
+    <meta charset="utf-8" id="ii3oum"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1" id="im5umh"/>
+    <meta name="robots" content="index,follow">
+    <meta name="generator" content="GrapesJS Studio">
+    <link href="https://fonts.googleapis.com" rel="preconnect" id="ibky1g"/>
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin="" id="i9mk03"/>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Manrope:wght@600;700;800&amp;display=swap" rel="stylesheet" id="in4rbh"/>
+    <link rel="stylesheet" href="./style.css">
+  </head>
+  <body id="ikx698" class="gjs-t-body cls-6mvrzx">
+    <header id="ilyt8p" class="site-header">
+      <nav id="ipejsl" class="navbar">
+        <a href="./index.html" id="iqsm0k" class="gjs-t-link brand-link">
+          <div id="i0zog" class="brand-group">
+            <span class="logo">Venkateshpura Lake</span>
+          </div>
+        </a>
+        <button type="button" aria-controls="ieilc3" aria-expanded="false" id="imenu1" class="navbar-toggle">
+          <img src="https://api.iconify.design/lucide-menu.svg?width=22&amp;height=22" alt="Open menu" width="22" height="22" loading="lazy"/>
+        </button>
+        <nav class="primary-navigation">
+          <a href="./index.html" class="gjs-t-link nav-link-dashboard">Dashboard</a>
+          
+          <div class="dropdown-nav about-dropdown" style="display:inline-block; position:relative;">
+            <button type="button" class="gjs-t-link nav-link-dashboard dropdown-toggle" aria-haspopup="true" aria-expanded="false" style="background:none; border:none; cursor:pointer;">
+              About &#9662;
+            </button>
+            <ul class="dropdown-menu" style="display:none; position:absolute; left:0; top:100%; min-width:180px; background:white; box-shadow:0 2px 10px rgba(0,0,0,0.08); border-radius:0.4em; z-index:1000; margin:0; padding:0;">
+              <li style="list-style:none; margin:0;"><a href="./history.html" class="gjs-t-link nav-link-dashboard" style="display:block; padding:0.65em 1.2em;">History</a></li>
+              <li style="list-style:none; margin:0;"><a href="./flora-and-fauna.html" class="gjs-t-link nav-link-dashboard" style="display:block; padding:0.65em 1.2em;">Flora and Fauna</a></li>
+              <li style="list-style:none; margin:0;"><a href="./importance.html" class="gjs-t-link nav-link-dashboard" style="display:block; padding:0.65em 1.2em;">Importance of Lakes</a></li>
+            </ul>
+          </div>
+
+          <a href="./alerts.html" class="gjs-t-link nav-link-dashboard">Alerts</a>
+          <a href="./report-issue.html" class="gjs-t-button nav-button-report-issue">Report Issue</a>
+          <div style="display: inline-block; position: relative; vertical-align: middle;">
+            <button type="button" 
+              aria-label="Translate page"
+              id="translate-toggle-btn"
+              style="height: 28px; min-width: 38px; background: #eef3f7; border: 1px solid #dde4ee; border-radius: 5px; padding: 2px 10px; display: flex; align-items: center; gap: 6px; cursor: pointer; transition: background 0.18s;">
+              <img src="https://api.iconify.design/ic:round-translate.svg?color=%233c8574" alt="Translate" width="18" height="18" style="vertical-align: middle;" />
+              <span style="font-size: 0.98em; color: #326b6f; font-family: 'Inter',sans-serif;">Translate</span>
+            </button>
+            <div id="google_translate_element"
+                 style="display: none; position: absolute; left: 0; top: 110%; background: #fff; z-index: 1700; border: 1px solid #dde4ee; border-radius: 5px; min-width: 145px; box-shadow: 0 4px 18px rgba(60,133,116,0.12); padding: 9px 12px;">
+            </div>
+          </div>
+          <script>
+          (function() {
+            var container = document.currentScript
+              ? document.currentScript.previousElementSibling
+              : document.querySelector('[id="google_translate_element"]').parentElement;
+            var btn = container.querySelector('#translate-toggle-btn');
+            var panel = container.querySelector('#google_translate_element');
+
+            btn.addEventListener('click', function(e) {
+              e.stopPropagation();
+              var isVisible = panel.style.display === 'block';
+              panel.style.display = isVisible ? 'none' : 'block';
+            });
+
+            // Hide panel when clicking outside
+            document.addEventListener('click', function(e) {
+              if (!container.contains(e.target)) {
+                panel.style.display = 'none';
+              }
+            });
+
+            // Optional: Keyboard navigation (ESC to close)
+            btn.addEventListener('keydown', function(e) {
+              if (e.key === "Escape") {
+                panel.style.display = 'none';
+              }
+            });
+          })();
+          </script>
+        </nav>
+        <script>
+        // Dropdown "About" toggle behavior (desktop-friendly, simple)
+        (function() {
+          var dropdown = document.querySelector('.about-dropdown');
+          if (!dropdown) return;
+
+          var btn = dropdown.querySelector('.dropdown-toggle');
+          var menu = dropdown.querySelector('.dropdown-menu');
+
+          // Open dropdown on button click or focus
+          btn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            var isOpen = menu.style.display === 'block';
+            menu.style.display = isOpen ? 'none' : 'block';
+            btn.setAttribute('aria-expanded', !isOpen);
+          });
+
+          // Close menu when clicking elsewhere
+          document.addEventListener('click', function(e) {
+            if (!dropdown.contains(e.target)) {
+              menu.style.display = 'none';
+              btn.setAttribute('aria-expanded', 'false');
+            }
+          });
+
+          // Optionally: open on mouseenter, close on mouseleave (desktop only)
+          dropdown.addEventListener('mouseenter', function() {
+            if (window.innerWidth > 780) {
+              menu.style.display = 'block';
+              btn.setAttribute('aria-expanded', 'true');
+            }
+          });
+          dropdown.addEventListener('mouseleave', function() {
+            if (window.innerWidth > 780) {
+              menu.style.display = 'none';
+              btn.setAttribute('aria-expanded', 'false');
+            }
+          });
+
+          // Keyboard navigation (Escape key closes)
+          btn.addEventListener('keydown', function(e) {
+            if (e.key === "Escape") {
+              menu.style.display = 'none';
+              btn.setAttribute('aria-expanded', 'false');
+            }
+          });
+        })();
+        </script>
+      </div>
+      <script>
+        (function () {
+          var header = document.getElementById('i4cmg');
+          if (!header) return;
+          var toggleBtn = header.querySelector('#i4cmg-toggle');
+          var nav = header.querySelector('#i4cmg-nav');
+          if (!toggleBtn || !nav) return;
+
+          function closeMenu() {
+            nav.classList.remove('is-open');
+            toggleBtn.setAttribute('aria-expanded', 'false');
+            toggleBtn.setAttribute('aria-label', 'Open menu');
+          }
+
+          toggleBtn.addEventListener('click', function () {
+            var isOpen = nav.classList.toggle('is-open');
+            toggleBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+            toggleBtn.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
+          });
+
+          nav.querySelectorAll('a').forEach(function (link) {
+            link.addEventListener('click', closeMenu);
+          });
+
+          window.addEventListener('resize', function () {
+            if (window.innerWidth > 992) {
+              closeMenu();
+            }
+          });
+        })();
+      </script>
+    </header>
+    <main id="invosq">
+      <section class="hero-section">
+        <div class="hero-container">
+          <div class="biodiversity-hero-grid">
+            <div class="hero-text-column">
+              <h1 class="hero-heading">Biodiversity</h1>
+              <p class="hero-subtitle">Lakes house various species of animals, birds, insects, plants, and trees. All together create a harmonious ecosystem that helps keep the environment alive</p>
+              <div id="iexuz" class="hero-actions">
+                <a href="#plant-identifier-section" class="gjs-t-button primary-cta">Plant Identifier</a>
+                <a href="#conservation-title-block" class="secondary-cta">Tips</a>
+              </div>
+            </div>
+           <!--    <img src="bees.jpg"> </div> --> 
+          </div>
+        </section>
+        
+      <section id="plant-identifier-section" class="gjs-t-border identifier-section" style="margin:2rem auto;max-width:450px;background:#fafcf8;padding:2rem 1.5rem;border-radius:1.2rem;box-shadow:0 2px 12px rgba(40,66,50,0.06);">
+        <h2 id="plant-identifier-heading" class="gjs-t-h2" style="text-align:center;margin-bottom:1.2rem;color:#296240;letter-spacing:0.01em;font-weight:700;">
+          Plant Identifier
+        </h2>
+        <form id="upload-form" enctype="multipart/form-data" style="display:flex;flex-direction:column;gap:1.2rem;align-items:center;">
+          <label for="upload-input" style="font-weight:500;">Upload a photo of a plant to identify:</label>
+          <input id="upload-input" type="file" name="image" accept="image/*" required style="padding:0.6em 1em;background:#f3f6ee;border-radius:0.6em;border:1px solid #c6dfb0;">
+          <button type="submit" class="gjs-t-button" style="padding:.7em 1.7em;background:#5dc979;color:#fff;font-weight:600;border:none;border-radius:1.6em;cursor:pointer;transition:.15s;">
+            Identify Species
+          </button>
+        </form>
+      </section>
+      <section id="plant-identifier-results-section" style="margin:0 auto 2.5rem auto;max-width:460px;">
+        <div id="results-area"
+             style="
+             margin-top:1.3rem;
+             min-height:70px;
+             background:#f5f8ee;
+             border-radius:1.0em;
+             border: 1.5px solid #d9eccc;
+             box-shadow: 0 1px 5px rgba(46,84,38,0.08);
+             padding:1.2em 1.2em;
+             font-size:1.08em;
+             color:#23513b;
+             line-height:1.6;
+             word-break:break-word;
+             text-align: left;
+             transition: box-shadow 0.15s;">
+        </div>
+        <div id="results-area">
+        </div>
+      </section>
+      <section id="in7zv8" class="introduction-section">
+        <div id="i8wn4g" class="introduction-grid">
+          <div id="ijvv1u" class="introduction-text">
+            <h2 id="i1mnpc" class="gjs-t-h2 introduction-heading">Why biodiversity at the lake matters</h2>
+            <p id="ijfk24" class="introduction-paragraph">Venkateshpura Lake functions as a living ecosystem: aquatic plants filter water, shoreline vegetation prevents erosion, and diverse fauna—from fish and frogs to dragonflies and water birds—keep food webs in balance. Healthy biodiversity improves water quality, supports pollinators, and offers opportunities for learning and recreation.</p>
+            <p id="i1zkyf" class="introduction-paragraph-secondary">This page highlights notable flora and fauna observed around urban lakes like Venkateshpura, encouraging careful observation, documentation, and stewardship by the community.</p>
+          </div>
+         <!-- <div id="iig5tg" class="introduction-media">
+            <div id="itzkvg" class="gjs-t-border introduction-image-wrapper">
+              <img loading="lazy" width="800" height="600" alt="Close-up of aquatic plants at the lake shoreline" src="https://app.grapesjs.com/api/assets/random-image?query=%22aquatic%20plants%20shoreline%20close-up%22&amp;w=800&amp;h=600" id="irehpy" class="introduction-image"/>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <section id="i2390j" class="flora-section">
+        <div id="iggnj7" class="flora-header">
+          <div id="ipkv03">
+            <h2 id="ierowb" class="gjs-t-h2 flora-heading">Flora: plants that shape the lake</h2>
+            <p id="i83nxl" class="flora-description">Aquatic and riparian plants stabilize banks, offer habitat for fish and insects, and improve water quality through natural filtration.</p>
+          </div>
+        </div>
+        <div id="iuxgum" class="flora-cards-grid">
+          <article id="i7r6m6" class="gjs-t-border flora-card">
+            <div id="i4tlfu" class="flora-card-media">
+              <img loading="lazy" width="600" height="450" alt="Pink lotus flowers in a lake" src="https://app.grapesjs.com/api/assets/random-image?query=%22lotus%20flowers%20in%20lake%22&amp;w=600&amp;h=450" id="i1vbjc" class="flora-card-image"/>
+            </div>
+            <div id="ivf91u" class="flora-card-content">
+              <h3 id="iihrkl" class="flora-card-title">Indian Lotus (Nelumbo nucifera)</h3>
+              <p id="ij3c4o" class="flora-card-text">Iconic floating leaves and blooms that provide shade and microhabitats for fish and aquatic invertebrates.</p>
+            </div>
+          </article>
+          <article id="i414nf" class="gjs-t-border flora-card">
+            <div id="ibj8ak" class="flora-card-media">
+              <img loading="lazy" width="600" height="450" alt="White water lilies on calm water" src="https://app.grapesjs.com/api/assets/random-image?query=%22water%20lilies%20calm%20water%22&amp;w=600&amp;h=450" id="iwutlt" class="flora-card-image"/>
+            </div>
+            <div id="io84jj" class="flora-card-content">
+              <h3 id="ioqam5" class="flora-card-title">Water Lily (Nymphaea spp.)</h3>
+              <p id="in5o8z" class="flora-card-text">Floating pads support insects and offer cover for small fish; flowers attract pollinators.</p>
+            </div>
+          </article>
+          <article id="i307ba" class="gjs-t-border flora-card">
+            <div id="i0nli9" class="flora-card-media">
+              <img loading="lazy" width="600" height="450" alt="Reed beds and cattails along a lake edge" src="https://app.grapesjs.com/api/assets/random-image?query=%22cattails%20reed%20beds%20lake%20edge%22&amp;w=600&amp;h=450" id="iy8ebz" class="flora-card-image"/>
+            </div>
+            <div id="iil3f8" class="flora-card-content">
+              <h3 id="idwrq8" class="flora-card-title">Cattails &amp; Reeds (Typha, Phragmites)</h3>
+              <p id="ievpwo" class="flora-card-text">Dense stands stabilize shorelines, filter nutrients, and provide nesting cover for birds.</p>
+            </div>
+          </article>
+          <article id="ieh5m3" class="gjs-t-border flora-card">
+            <div id="idtxyf" class="flora-card-media">
+              <img loading="lazy" width="600" height="450" alt="Submerged aquatic plants underwater" src="https://app.grapesjs.com/api/assets/random-image?query=%22submerged%20aquatic%20plants%20underwater%22&amp;w=600&amp;h=450" id="iizdd9" class="flora-card-image"/>
+            </div>
+            <div id="i3vlhv" class="flora-card-content">
+              <h3 id="iewcg2" class="flora-card-title">Submerged plants (e.g., Hydrilla)</h3>
+              <p id="iznc1a" class="flora-card-text">Offer oxygenation and habitat; require monitoring to prevent overgrowth that can reduce open water.</p>
+            </div>
+          </article>
+        </div>
+      </section>
+      <section id="ibuvjx" class="fauna-section">
+        <div id="ito898" class="fauna-header">
+          <div id="ijaagx">
+            <h2 id="iu9jju" class="gjs-t-h2 fauna-heading">Fauna: life that thrives in and around the water</h2>
+            <p id="i7uqx3" class="fauna-description">From water birds and fish to amphibians and insects, these species indicate ecosystem health and help control pests naturally.</p>
+          </div>
+        </div>
+        <div id="i4hhix" class="fauna-layout-grid">
+          <div id="ivnvae" class="fauna-media-column">
+            <div id="ixi46n" class="gjs-t-border fauna-collage-wrapper">
+              <img loading="lazy" width="900" height="650" alt="Birds perched near water with reflections" src="https://app.grapesjs.com/api/assets/random-image?query=%22water%20birds%20perched%20near%20lake%22&amp;w=900&amp;h=650" id="i6t89i" class="fauna-collage-image"/>
+            </div>
+            <div id="i4yeif" class="fauna-supplemental-grid">
+              <div id="ik2sm5" class="gjs-t-border fauna-supplemental-image-wrapper">
+                <img loading="lazy" width="600" height="400" alt="Fish underwater in clear lake" src="https://app.grapesjs.com/api/assets/random-image?query=%22fish%20underwater%20in%20lake%22&amp;w=600&amp;h=400" id="ibt20f" class="fauna-supplemental-image"/>
+              </div>
+              <div id="iha92g" class="gjs-t-border fauna-supplemental-image-wrapper">
+                <img loading="lazy" width="600" height="400" alt="Dragonfly resting near aquatic plants" src="https://app.grapesjs.com/api/assets/random-image?query=%22dragonfly%20near%20aquatic%20plants%22&amp;w=600&amp;h=400" id="ibi6rg" class="fauna-supplemental-image"/>
+              </div>
+            </div>
+          </div> -->
+          
+          <div id="iswejl" class="fauna-categories-column">
+            <ul id="i9vixu" class="fauna-categories-list">
+              <li id="ivgqri" class="gjs-t-border fauna-category-item">
+                <img src="https://api.iconify.design/lucide-bird.svg" alt="Bird icon" width="24" height="24" loading="lazy" id="igewgh" class="fauna-category-icon"/>
+                <div id="idyjd6" class="fauna-category-content">
+                  <h3 id="ipghsf" class="fauna-category-title">Birds</h3>
+                  <p id="i3y3bj" class="fauna-category-text">Often observed: Indian Spot-billed Duck, Little Cormorant, Cattle Egret, Pond Heron, White-throated Kingfisher. Seasonal visitors vary with water levels and food availability.</p>
+                </div>
+              </li>
+              <li id="i934d5" class="gjs-t-border fauna-category-item">
+                <img src="https://api.iconify.design/lucide-fish.svg" alt="Fish icon" width="24" height="24" loading="lazy" id="ivwnlr" class="fauna-category-icon"/>
+                <div id="iq8lj1" class="fauna-category-content">
+                  <h3 id="ifv8bz" class="fauna-category-title">Fish</h3>
+                  <p id="i0o0iz" class="fauna-category-text">Common groups include carps and small native species that feed birds and stabilize food webs. Vegetation cover supports breeding and offers refuge from predators.</p>
+                </div>
+              </li>
+              <li id="is874j" class="gjs-t-border fauna-category-item">
+                <img src="https://api.iconify.design/lucide-frog.svg" alt="Frog icon" width="24" height="24" loading="lazy" id="iwgj3t" class="fauna-category-icon"/>
+                <div id="ii6pc7" class="fauna-category-content">
+                  <h3 id="i55eu9" class="fauna-category-title">Amphibians</h3>
+                  <p id="i6ekeg" class="fauna-category-text">Frogs and toads breed during monsoon, controlling insects naturally and serving as bioindicators of water quality.</p>
+                </div>
+              </li>
+              <li id="i06fn4" class="gjs-t-border fauna-category-item">
+                <img src="https://api.iconify.design/lucide-bug.svg" alt="Insect icon" width="24" height="24" loading="lazy" id="i8moa5" class="fauna-category-icon"/>
+                <div id="ipjpva" class="fauna-category-content">
+                  <h3 id="ij4xfz" class="fauna-category-title">Insects</h3>
+                  <p id="il1sh4" class="fauna-category-text">Dragonflies, damselflies, butterflies, and pollinators thrive near flowering plants; their presence indicates balanced predator–prey relationships.</p>
+                </div>
+              </li>
+            </ul>
+            <div id="i6h1sl" class="fauna-highlight-notice">
+              <div id="iopf2k" class="fauna-highlight-content">
+                <img src="https://api.iconify.design/lucide-alert-triangle.svg" alt="Notice icon" width="20" height="20" loading="lazy" id="ir3snv" class="fauna-highlight-icon"/>
+                <p id="iq43sj" class="fauna-highlight-text">Notable regional sightings (occasionally recorded in urban Bengaluru lakes): Painted Stork and Spot-billed Pelican (both Near Threatened globally). If observed, maintain distance and avoid disturbance.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section style="width: 80%; margin-left: auto; margin-right: auto;">
+        <p class="introduction-heading">Butterflies of Venkateshpura Lake</p>
+        <h5>Source: https://www.atree.org/wp-content/uploads/2025/02/Butterflies-of-Venkateshpura-Lake.pdf </h5>
+      <embed src="Butterflies-of-Venkateshpura-Lake.pdf" type="application/pdf" width="100%" height="1000px" 
+          />
+        </section>
+      <section id="iyj16h" class="seasonal-changes-section">
+        <div id="io30eg" class="seasonal-title-block">
+          <h2 id="i5b51m" class="gjs-t-h2 seasonal-heading">Seasonal changes across the year</h2>
+          <p id="i9r38d" class="seasonal-description">Species presence and behavior shift with rainfall and temperature. Here’s what to look for:</p>
+        </div>
+        <div id="ih0dre" class="seasonal-cards-grid">
+          <article id="ilmhs4" class="gjs-t-border seasonal-card">
+            <div id="iaju1u" class="seasonal-card-header">
+              <img src="https://api.iconify.design/lucide-cloud-rain.svg" alt="Monsoon icon" width="24" height="24" loading="lazy" id="irk536"/>
+              <h3 id="id84rl" class="seasonal-card-title">Monsoon</h3>
+            </div>
+            <ul id="ipwddi" class="seasonal-card-list">
+              <li id="i0miqq">Amphibian breeding and chorus calls during evenings.</li>
+              <li id="iv4e2e">Rapid growth of submerged and emergent plants.</li>
+              <li id="iivl3v">Increased dragonfly activity and prey abundance.</li>
+            </ul>
+          </article>
+          <article id="iixlhq" class="gjs-t-border seasonal-card">
+            <div id="ind9lm" class="seasonal-card-header">
+              <img src="https://api.iconify.design/lucide-wind.svg" alt="Post-monsoon icon" width="24" height="24" loading="lazy" id="i6hmdw"/>
+              <h3 id="ih356j" class="seasonal-card-title">Post-monsoon &amp; Winter</h3>
+            </div>
+            <ul id="ijisq5" class="seasonal-card-list">
+              <li id="it9gqj">Best time for birdwatching; migrants and higher diversity.</li>
+              <li id="i4vwcv">Flowering of aquatic and riparian plants attracts pollinators.</li>
+              <li id="iflin6">Stable water levels improve visibility of shoreline species.</li>
+            </ul>
+          </article>
+          <article id="iasuoi" class="gjs-t-border seasonal-card">
+            <div id="i2ewj4" class="seasonal-card-header">
+              <img src="https://api.iconify.design/lucide-sun.svg" alt="Summer icon" width="24" height="24" loading="lazy" id="ibr8pt"/>
+              <h3 id="ijxqql" class="seasonal-card-title">Summer</h3>
+            </div>
+            <ul id="i3gf3s" class="seasonal-card-list">
+              <li id="ins9ef">Lower water exposes mudflats used by waders and herons.</li>
+              <li id="izdu4s">Shade from lotus and lilies helps fish avoid heat stress.</li>
+              <li id="i1m8eb">Monitor algal growth; balanced vegetation aids water clarity.</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+      <section id="i5yo4w" class="conservation-tips-section">
+        <div id="idrb5a" class="conservation-title-block">
+          <h2 id="i83k0y" class="gjs-t-h2 conservation-heading">How you can help conserve biodiversity</h2>
+          <p id="iduk9h" class="conservation-description">Community actions protect habitats and keep the lake thriving for future generations.</p>
+        </div>
+        <div id="ia76xx" class="conservation-tips-grid">
+          <div id="ixb6u2" class="gjs-t-border conservation-tip">
+            <img src="https://api.iconify.design/lucide-recycle.svg" alt="Recycle icon" width="24" height="24" loading="lazy" id="ipd4qj" class="conservation-tip-icon"/>
+            <div id="igr67h" class="conservation-tip-content">
+              <h3 id="i4dp5x" class="conservation-tip-title">Reduce pollution at source</h3>
+              <p id="iast4t" class="conservation-tip-text">Avoid dumping waste or chemicals; join clean-ups and support sewage treatment and silt-traps in the catchment.</p>
+            </div>
+          </div>
+          <div id="ic2fqz" class="gjs-t-border conservation-tip">
+            <img src="https://api.iconify.design/lucide-tree-pine.svg" alt="Tree icon" width="24" height="24" loading="lazy" id="ir7ar9" class="conservation-tip-icon"/>
+            <div id="iyhj99" class="conservation-tip-content">
+              <h3 id="i6vj3d" class="conservation-tip-title">Restore native vegetation</h3>
+              <p id="imz079" class="conservation-tip-text">Plant indigenous species along the bund and avoid introducing invasive plants that displace native flora.</p>
+            </div>
+          </div>
+          <div id="ii8afr" class="gjs-t-border conservation-tip">
+            <img src="https://api.iconify.design/lucide-heart-handshake.svg" alt="Community icon" width="24" height="24" loading="lazy" id="iytymc" class="conservation-tip-icon"/>
+            <div id="isuw3i" class="conservation-tip-content">
+              <h3 id="idy3rz" class="conservation-tip-title">Observe responsibly</h3>
+              <p id="iqeic5" class="conservation-tip-text">Keep a respectful distance from nesting birds and amphibian breeding sites; avoid loud noises and feeding wildlife.</p>
+            </div>
+          </div>
+          <div id="ibwtw7" class="gjs-t-border conservation-tip">
+            <img src="https://api.iconify.design/lucide-notebook-pen.svg" alt="Notebook icon" width="24" height="24" loading="lazy" id="ikq2a4" class="conservation-tip-icon"/>
+            <div id="i1aptl" class="conservation-tip-content">
+              <h3 id="itlt9f" class="conservation-tip-title">Document and share</h3>
+              <p id="i7ppg4" class="conservation-tip-text">Record sightings on community boards or citizen-science platforms to support monitoring and education.</p>
+            </div>
+          </div>
+        </div>
+        <div id="i8fjdg" class="conservation-cta-row">
+          <a href="./index.html" id="ib0wsh" class="gjs-t-button cta-button-dashboard">Explore Lake Dashboard</a>
+          <a href="./history.html" id="im4ypt" class="gjs-t-link cta-link-history">Learn the lake’s history</a>
+        </div>
+      </section>
+    </main>
+    <footer class="site-footer">
+      <div class="footer-container">
+        <div>
+          <h4 class="footer-title">About</h4>
+          <p class="footer-text">Community-led initiative to protect and restore Venkateshpura Lake through monitoring, reporting, and awareness.</p>
+        </div>
+        <div>
+          <h4 class="footer-title">Navigate</h4>
+          <ul class="footer-nav-list">
+            <li><a href="./index.html" class="gjs-t-link">Dashboard</a></li>
+            <li><a href="./history.html" class="gjs-t-link">History</a></li>
+            <li><a href="./flora-and-fauna.html" class="gjs-t-link">Flora &amp; Fauna</a></li>
+            <li><a href="./alerts.html" class="gjs-t-link">Alerts</a></li>
+            <li><a href="./report-issue.html" class="gjs-t-link">Report Issue</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-title">Contacts</h4>
+          <dl class="footer-contacts-list">
+            <div class="footer-contact-item">
+              <dt class="footer-contact-term">Community Group</dt>
+              <dd><a href="mailto:lakecare@example.org" class="gjs-t-link">lakecare@example.org</a></dd>
+            </div>
+            <div class="footer-contact-item">
+              <dt class="footer-contact-term">Civic Helpline</dt>
+              <dd><a href="tel:+91112" class="gjs-t-link">112</a></dd>
+            </div>
+          </dl>
+        </div>
+      </div>
+      <div class="footer-bottom-bar">
+        <p>© <span>2025</span> Venkateshpura Lake Initiative. All rights reserved.</p>
+      </div>
+
+    <script>
+      (function(){
+        var root = document.getElementById('ikx698');
+        if(!root) return;
+        var toggle = root.querySelector('.navbar-toggle');
+        var menu = root.querySelector('#ieilc3');
+        if(toggle && menu){
+          toggle.addEventListener('click', function(){
+            var open = menu.classList.toggle('is-open');
+            toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+          });
+        }
+      })();
+    </script>
+    <script src="identification.js">
+    </script>
+        <script type="text/javascript">
+          function googleTranslateElementInit() {
+            new google.translate.TranslateElement({pageLanguage: 'en', includedLanguages: 'kn', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+          }
+          </script>
+          <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+  </body>
+</html>

@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Alerts - Venkateshpura Lake</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="robots" content="index,follow">
+    <meta name="generator" content="GrapesJS Studio">
+    <meta name="description" content="Real-time alerts and advisories for Venkateshpura Lake: environmental hazards, water quality warnings, and community notices. Subscribe for email or SMS updates."/>
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""/>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Manrope:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="./style.css">
+  </head>
+  <body class="gjs-t-body">
+    <header class="header-bar">
+      <div class="header-container">
+        <a href="./index.html" class="gjs-t-link brand-link">
+          <div id="i0zog" class="brand-group">
+            <span class="logo">Venkateshpura Lake</span>
+          </div>
+        </a>
+        <nav class="primary-navigation">
+          <a href="./index.html" class="gjs-t-link nav-link-dashboard">Dashboard</a>
+          
+          <div class="dropdown-nav about-dropdown" style="display:inline-block; position:relative;">
+            <button type="button" class="gjs-t-link nav-link-dashboard dropdown-toggle" aria-haspopup="true" aria-expanded="false" style="background:none; border:none; cursor:pointer;">
+              About &#9662;
+            </button>
+            <ul class="dropdown-menu" style="display:none; position:absolute; left:0; top:100%; min-width:180px; background:white; box-shadow:0 2px 10px rgba(0,0,0,0.08); border-radius:0.4em; z-index:1000; margin:0; padding:0;">
+              <li style="list-style:none; margin:0;"><a href="./history.html" class="gjs-t-link nav-link-dashboard" style="display:block; padding:0.65em 1.2em;">History</a></li>
+              <li style="list-style:none; margin:0;"><a href="./flora-and-fauna.html" class="gjs-t-link nav-link-dashboard" style="display:block; padding:0.65em 1.2em;">Flora and Fauna</a></li>
+              <li style="list-style:none; margin:0;"><a href="./importance.html" class="gjs-t-link nav-link-dashboard" style="display:block; padding:0.65em 1.2em;">Importance of Lakes</a></li>
+            </ul>
+          </div>
+
+          <a href="./alerts.html" class="gjs-t-link nav-link-dashboard">Alerts</a>
+          <a href="./report-issue.html" class="gjs-t-button nav-button-report-issue">Report Issue</a>
+          <div style="display: inline-block; position: relative; vertical-align: middle;">
+            <button type="button" 
+              aria-label="Translate page"
+              id="translate-toggle-btn"
+              style="height: 28px; min-width: 38px; background: #eef3f7; border: 1px solid #dde4ee; border-radius: 5px; padding: 2px 10px; display: flex; align-items: center; gap: 6px; cursor: pointer; transition: background 0.18s;">
+              <img src="https://api.iconify.design/ic:round-translate.svg?color=%233c8574" alt="Translate" width="18" height="18" style="vertical-align: middle;" />
+              <span style="font-size: 0.98em; color: #326b6f; font-family: 'Inter',sans-serif;">Translate</span>
+            </button>
+            <div id="google_translate_element"
+                 style="display: none; position: absolute; left: 0; top: 110%; background: #fff; z-index: 1700; border: 1px solid #dde4ee; border-radius: 5px; min-width: 145px; box-shadow: 0 4px 18px rgba(60,133,116,0.12); padding: 9px 12px;">
+            </div>
+          </div>
+          <script>
+          (function() {
+            var container = document.currentScript
+              ? document.currentScript.previousElementSibling
+              : document.querySelector('[id="google_translate_element"]').parentElement;
+            var btn = container.querySelector('#translate-toggle-btn');
+            var panel = container.querySelector('#google_translate_element');
+
+            btn.addEventListener('click', function(e) {
+              e.stopPropagation();
+              var isVisible = panel.style.display === 'block';
+              panel.style.display = isVisible ? 'none' : 'block';
+            });
+
+            // Hide panel when clicking outside
+            document.addEventListener('click', function(e) {
+              if (!container.contains(e.target)) {
+                panel.style.display = 'none';
+              }
+            });
+
+            // Optional: Keyboard navigation (ESC to close)
+            btn.addEventListener('keydown', function(e) {
+              if (e.key === "Escape") {
+                panel.style.display = 'none';
+              }
+            });
+          })();
+          </script>
+        </nav>
+        <script>
+        // Dropdown "About" toggle behavior (desktop-friendly, simple)
+        (function() {
+          var dropdown = document.querySelector('.about-dropdown');
+          if (!dropdown) return;
+
+          var btn = dropdown.querySelector('.dropdown-toggle');
+          var menu = dropdown.querySelector('.dropdown-menu');
+
+          // Open dropdown on button click or focus
+          btn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            var isOpen = menu.style.display === 'block';
+            menu.style.display = isOpen ? 'none' : 'block';
+            btn.setAttribute('aria-expanded', !isOpen);
+          });
+
+          // Close menu when clicking elsewhere
+          document.addEventListener('click', function(e) {
+            if (!dropdown.contains(e.target)) {
+              menu.style.display = 'none';
+              btn.setAttribute('aria-expanded', 'false');
+            }
+          });
+
+          // Optionally: open on mouseenter, close on mouseleave (desktop only)
+          dropdown.addEventListener('mouseenter', function() {
+            if (window.innerWidth > 780) {
+              menu.style.display = 'block';
+              btn.setAttribute('aria-expanded', 'true');
+            }
+          });
+          dropdown.addEventListener('mouseleave', function() {
+            if (window.innerWidth > 780) {
+              menu.style.display = 'none';
+              btn.setAttribute('aria-expanded', 'false');
+            }
+          });
+
+          // Keyboard navigation (Escape key closes)
+          btn.addEventListener('keydown', function(e) {
+            if (e.key === "Escape") {
+              menu.style.display = 'none';
+              btn.setAttribute('aria-expanded', 'false');
+            }
+          });
+        })();
+        </script>
+      </div>
+      <script>
+        (function () {
+          var header = document.getElementById('i4cmg');
+          if (!header) return;
+          var toggleBtn = header.querySelector('#i4cmg-toggle');
+          var nav = header.querySelector('#i4cmg-nav');
+          if (!toggleBtn || !nav) return;
+
+          function closeMenu() {
+            nav.classList.remove('is-open');
+            toggleBtn.setAttribute('aria-expanded', 'false');
+            toggleBtn.setAttribute('aria-label', 'Open menu');
+          }
+
+          toggleBtn.addEventListener('click', function () {
+            var isOpen = nav.classList.toggle('is-open');
+            toggleBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+            toggleBtn.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
+          });
+
+          nav.querySelectorAll('a').forEach(function (link) {
+            link.addEventListener('click', closeMenu);
+          });
+
+          window.addEventListener('resize', function () {
+            if (window.innerWidth > 992) {
+              closeMenu();
+            }
+          });
+        })();
+      </script>
+      </div>
+    </header>
+    <main class="main-content">
+      <section class="hero-section">
+        <div class="hero-copy">
+          <h1 class="hero-heading">Alerts</h1>
+          <p class="page-subtitle">
+            Centralized updates on lake conditions, environmental hazards, and community advisories. Check current alerts, browse the archive, subscribe to notifications, or report an issue.
+          </p>
+          <div class="hero-actions">
+            <a href="#subscribe" class="report-issue-button">Subscribe</a>
+            <a href="#report" class="secondary-cta">Report an Issue</a>
+          </div>
+        </div>
+        <aside class="severity-legend">
+          <div class="legend-title-wrapper">
+            <img src="https://api.iconify.design/lucide-badge-alert.svg" alt="Alert legend" width="22" height="22" loading="lazy"/>
+            <h2 class="gjs-t-h2 legend-title">Severity Legend</h2>
+          </div>
+          <ul class="legend-list">
+            <li class="legend-item-critical">
+              <span class="legend-dot-critical"></span>
+              <span class="legend-label-critical">High (Immediate attention)</span>
+            </li>
+            <li class="legend-item-moderate">
+              <span class="legend-dot-moderate"></span>
+              <span class="legend-label-moderate">Moderate (Caution advised)</span>
+            </li>
+            <li class="legend-item-low">
+              <span class="legend-dot-low"></span>
+              <span class="legend-label-low">Low (Monitor)</span>
+            </li>
+          </ul>
+        </aside>
+      </section>
+      <section id="current-alerts" class="current-alerts-section">
+        <div class="section-header-current-alerts">
+          <h2 class="gjs-t-h2">Current Alerts</h2>
+          <div class="section-tools">
+            <span class="last-updated-label">Last updated: Oct 12, 2025</span>
+          </div>
+        </div>
+        <div class="alerts-list">
+          <article class="gjs-t-border alert-card-critical">
+            <div class="alert-header">
+              <div class="alert-header-left">
+                <img src="https://api.iconify.design/lucide-alert-triangle.svg" alt="Critical alert" width="22" height="22" loading="lazy" class="alert-icon-critical"/>
+                <h3 class="alert-title">Algal Bloom Advisory</h3>
+              </div>
+              <span class="alert-severity-critical">High</span>
+            </div>
+            <div class="alert-meta">
+              <time datetime="2025-10-12">Oct 12, 2025</time>
+              <span class="alert-source">
+                <img src="https://api.iconify.design/lucide-scan-line.svg" alt="Sensor source" width="16" height="16" loading="lazy"/>
+                <em class="alert-source-label">Auto-sensor + Visual confirmation</em>
+              </span>
+            </div>
+            <p class="alert-description">
+              Dense algal bloom observed near the northern inlet. Potential toxin production may cause skin irritation and harm to pets and wildlife.
+            </p>
+            <div class="alert-actions-wrapper">
+              <strong class="recommended-actions-label">Recommended actions:</strong>
+              <ul class="recommended-actions-list">
+                <li>Avoid contact with water; keep children and pets away.</li>
+                <li>Do not fish or use the water for irrigation until cleared.</li>
+                <li>Report wildlife distress through the reporting form below.</li>
+              </ul>
+            </div>
+          </article>
+          <article class="gjs-t-border alert-card-moderate">
+            <div class="alert-header-moderate">
+              <div class="alert-header-left-moderate">
+                <img src="https://api.iconify.design/lucide-activity.svg" alt="Water quality alert" width="22" height="22" loading="lazy" class="alert-icon-moderate"/>
+                <h3 class="alert-title-moderate">Dissolved Oxygen Dip Detected</h3>
+              </div>
+              <span class="alert-severity-moderate">Moderate</span>
+            </div>
+            <div class="alert-meta-moderate">
+              <time datetime="2025-10-11">Oct 11, 2025</time>
+              <span class="alert-source-moderate">
+                <img src="https://api.iconify.design/lucide-gauge.svg" alt="Sensor source" width="16" height="16" loading="lazy"/>
+                <em class="alert-source-label-moderate">Water quality sensors</em>
+              </span>
+            </div>
+            <p class="alert-description-moderate">
+              Dissolved oxygen levels are below optimal thresholds during early morning hours, increasing stress risks for fish.
+            </p>
+            <div class="alert-actions-wrapper-moderate">
+              <strong class="recommended-actions-label-moderate">Recommended actions:</strong>
+              <ul class="recommended-actions-list-moderate">
+                <li>Avoid any fish release activities this week.</li>
+                <li>Report fish gasping or surface clustering.</li>
+                <li>Volunteers: monitor morning conditions.</li>
+              </ul>
+            </div>
+          </article>
+          <article class="gjs-t-border alert-card-low">
+            <div class="alert-header-low">
+              <div class="alert-header-left-low">
+                <img src="https://api.iconify.design/lucide-trash-2.svg" alt="Litter alert" width="22" height="22" loading="lazy" class="alert-icon-low"/>
+                <h3 class="alert-title-low">Shoreline Litter Accumulation (East Bank)</h3>
+              </div>
+              <span class="alert-severity-low">Low</span>
+            </div>
+            <div class="alert-meta-low">
+              <time datetime="2025-10-10">Oct 10, 2025</time>
+              <span class="alert-source-low">
+                <img src="https://api.iconify.design/lucide-user.svg" alt="Community report" width="16" height="16" loading="lazy"/>
+                <em class="alert-source-label-low">Community report</em>
+              </span>
+            </div>
+            <p class="alert-description-low">
+              Increased plastic and food waste found near the east walking trail entrance after weekend activity.
+            </p>
+            <div class="alert-actions-wrapper-low">
+              <strong class="recommended-actions-label-low">Recommended actions:</strong>
+              <ul class="recommended-actions-list-low">
+                <li>Use designated bins and carry trash out if bins are full.</li>
+                <li>Volunteers: join the Saturday clean-up (9:00 AM).</li>
+                <li>Report overflowing bins via the form below.</li>
+              </ul>
+            </div>
+          </article>
+        </div>
+      </section>
+      <section id="past-alerts" class="past-alerts-section">
+        <h2 class="gjs-t-h2 section-title-past-alerts">Past Alerts Archive</h2>
+        <div class="archive-list">
+          <details class="gjs-t-border archive-item-1">
+            <summary class="archive-summary-1">
+              <div class="archive-summary-left-1">
+                <img src="https://api.iconify.design/lucide-warning.svg" alt="Past alert" width="18" height="18" loading="lazy"/>
+                <span class="archive-title-1">E. coli Spike (West Inlet)</span>
+              </div>
+              <div class="archive-meta-1">
+                <span class="archive-severity-1">Moderate</span>
+                <time datetime="2025-09-22" class="archive-date-1">Sep 22, 2025</time>
+              </div>
+            </summary>
+            <div class="archive-body-1">
+              <p>Elevated E. coli levels detected following heavy rainfall.</p>
+              <dl class="archive-outcome-list-1">
+                <dt class="archive-outcome-term-1">Outcome:</dt>
+                <dd class="archive-outcome-desc-1">Public advisory issued; levels normalized within 72 hours after inflow stabilization.</dd>
+              </dl>
+            </div>
+          </details>
+          <details class="gjs-t-border archive-item-2">
+            <summary class="archive-summary-2">
+              <div class="archive-summary-left-2">
+                <img src="https://api.iconify.design/lucide-check-circle.svg" alt="Resolved alert" width="18" height="18" loading="lazy"/>
+                <span class="archive-title-2">Fish Mortality Incident Review</span>
+              </div>
+              <div class="archive-meta-2">
+                <span class="archive-severity-2">Resolved</span>
+                <time datetime="2025-08-15" class="archive-date-2">Aug 15, 2025</time>
+              </div>
+            </summary>
+            <div class="archive-body-2">
+              <p>Localized fish deaths reported near southern embankment.</p>
+              <dl class="archive-outcome-list-2">
+                <dt class="archive-outcome-term-2">Outcome:</dt>
+                <dd class="archive-outcome-desc-2">Aeration measures and clean-up conducted; no further incidents observed over two weeks.</dd>
+              </dl>
+            </div>
+          </details>
+          <details class="gjs-t-border archive-item-3">
+            <summary class="archive-summary-3">
+              <div class="archive-summary-left-3">
+                <img src="https://api.iconify.design/lucide-info.svg" alt="Informational alert" width="18" height="18" loading="lazy"/>
+                <span class="archive-title-3">Desilting Activity Notification</span>
+              </div>
+              <div class="archive-meta-3">
+                <span class="archive-severity-3">Info</span>
+                <time datetime="2025-07-02" class="archive-date-3">Jul 2, 2025</time>
+              </div>
+            </summary>
+            <div class="archive-body-3">
+              <p>Scheduled desilting and bank reinforcement works.</p>
+              <dl class="archive-outcome-list-3">
+                <dt class="archive-outcome-term-3">Outcome:</dt>
+                <dd class="archive-outcome-desc-3">Works completed on schedule; pathways reopened.</dd>
+              </dl>
+            </div>
+          </details>
+        </div>
+      </section>
+      <section id="subscribe" class="subscription-section">
+        <div class="subscription-header">
+          <img src="https://api.iconify.design/lucide-bell.svg" alt="Subscribe icon" width="20" height="20" loading="lazy"/>
+          <h2 class="gjs-t-h2">Subscribe to Alerts</h2>
+        </div>
+        <div class="gjs-t-border subscription-card">
+          <form method="get" class="subscription-form">
+            <fieldset class="delivery-method-fieldset">
+              <legend class="delivery-method-legend">Delivery method</legend>
+              <label class="email-option-label">
+                <input type="radio" name="delivery" value="email" checked/>
+                <span>Email</span>
+              </label>
+              <label class="sms-option-label">
+                <input type="radio" name="delivery" value="sms"/>
+                <span>SMS</span>
+              </label>
+            </fieldset>
+            <div class="subscriber-inputs-grid">
+              <div class="email-input-group">
+                <label for="sub-email" class="email-label">Email address</label>
+                <input type="email" id="sub-email" placeholder="you@example.com" class="gjs-t-border email-input"/>
+              </div>
+              <div class="phone-input-group">
+                <label for="sub-phone" class="phone-label">Phone number (SMS)</label>
+                <input type="tel" id="sub-phone" placeholder="+91 9XXXXXXXXX" class="gjs-t-border phone-input"/>
+              </div>
+            </div>
+            <fieldset class="preferences-fieldset">
+              <legend class="preferences-legend">Alert preferences</legend>
+              <div class="preferences-grid">
+                <div class="severity-group">
+                  <span class="severity-label">Severity</span>
+                  <div class="severity-options">
+                    <label class="severity-high-label">
+                      <input type="checkbox" checked/>
+                      <span class="severity-high-text">High</span>
+                    </label>
+                    <label class="severity-moderate-label">
+                      <input type="checkbox" checked/>
+                      <span class="severity-moderate-text">Moderate</span>
+                    </label>
+                    <label class="severity-low-label">
+                      <input type="checkbox"/>
+                      <span class="severity-low-text">Low</span>
+                    </label>
+                  </div>
+                </div>
+                <div class="categories-group">
+                  <span class="categories-label">Categories</span>
+                  <div class="categories-options">
+                    <label class="category-water-quality-label">
+                      <input type="checkbox" checked/>
+                      <span>Water quality</span>
+                    </label>
+                    <label class="category-wildlife-label">
+                      <input type="checkbox"/>
+                      <span>Wildlife</span>
+                    </label>
+                    <label class="category-cleanliness-label">
+                      <input type="checkbox"/>
+                      <span>Cleanliness</span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </fieldset>
+            <div class="subscribe-actions">
+              <button type="submit" class="gjs-t-button subscribe-button">Subscribe</button>
+              <small class="subscribe-disclaimer">You can unsubscribe at any time.</small>
+            </div>
+          </form>
+        </div>
+      </section>
+      <section id="report-2" class="community-reporting-section">
+        <div class="report-header">
+          <img src="https://api.iconify.design/lucide-flag.svg" alt="Report icon" width="20" height="20" loading="lazy"/>
+          <h2 class="gjs-t-h2">Community Reporting</h2>
+        </div>
+        <div class="gjs-t-border report-card">
+          <p class="report-intro">
+            Notice an issue at the lake? Submit details to help us act quickly. You can use the form below or send an email.
+          </p>
+          <div class="report-actions">
+            <a href="mailto:alerts@venkateshpurulake.org?subject=Report%20Issue%20-%20Venkateshpura%20Lake&amp;body=Please%20describe%20the%20issue%20(location%2C%20time%2C%20what%20you%20observed)%3A%0A" class="gjs-t-button report-email-link">Report via Email</a>
+            <a href="./index.html" class="gjs-t-link report-dashboard-link">Go to Dashboard</a>
+          </div>
+          <form method="get" class="report-form">
+            <div class="field-name">
+              <label for="rep-name" class="label-name">Your name</label>
+              <input type="text" id="rep-name" placeholder="Full name" class="gjs-t-border input-name"/>
+            </div>
+            <div class="field-contact">
+              <label for="rep-contact" class="label-contact">Email or phone</label>
+              <input type="text" id="rep-contact" placeholder="you@example.com or +91..." class="gjs-t-border input-contact"/>
+            </div>
+            <div class="field-category">
+              <label for="rep-category" class="label-category">Issue type</label>
+              <select type="text" id="rep-category" class="gjs-t-border select-category">
+                <option value="">Choose a category</option>
+                <option value="water-quality">Water quality</option>
+                <option value="wildlife">Wildlife</option>
+                <option value="litter">Litter/Overflowing bins</option>
+                <option value="safety">Safety hazard</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+            <div class="field-severity">
+              <label for="rep-severity" class="label-severity">Severity</label>
+              <select type="text" id="rep-severity" class="gjs-t-border select-severity">
+                <option value="low">Low</option>
+                <option value="moderate">Moderate</option>
+                <option value="high">High</option>
+              </select>
+            </div>
+            <div class="field-location">
+              <label for="rep-location" class="label-location">Location</label>
+              <input type="text" id="rep-location" placeholder="e.g., East bank near trail entrance" class="gjs-t-border input-location"/>
+            </div>
+            <div class="field-description">
+              <label for="rep-desc" class="label-description">Description</label>
+              <textarea id="rep-desc" rows="4" placeholder="What did you observe? Include time and any photos available." class="gjs-t-border textarea-description"></textarea>
+            </div>
+            <div class="report-submit-wrapper">
+              <button type="submit" class="gjs-t-button report-submit-button">Submit Report</button>
+              <small class="report-privacy-note">We may contact you for clarification.</small>
+            </div>
+          </form>
+        </div>
+      </section>
+    </main>
+    <footer class="site-footer">
+      <div class="footer-container">
+        <div>
+          <h4 class="footer-title">About</h4>
+          <p class="footer-text">Community-led initiative to protect and restore Venkateshpura Lake through monitoring, reporting, and awareness.</p>
+        </div>
+        <div>
+          <h4 class="footer-title">Navigate</h4>
+          <ul class="footer-nav-list">
+            <li><a href="./index.html" class="gjs-t-link">Dashboard</a></li>
+            <li><a href="./history.html" class="gjs-t-link">History</a></li>
+            <li><a href="./flora-and-fauna.html" class="gjs-t-link">Flora &amp; Fauna</a></li>
+            <li><a href="./alerts.html" class="gjs-t-link">Alerts</a></li>
+            <li><a href="./report-issue.html" class="gjs-t-link">Report Issue</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-title">Contacts</h4>
+          <dl class="footer-contacts-list">
+            <div class="footer-contact-item">
+              <dt class="footer-contact-term">Community Group</dt>
+              <dd><a href="mailto:lakecare@example.org" class="gjs-t-link">lakecare@example.org</a></dd>
+            </div>
+            <div class="footer-contact-item">
+              <dt class="footer-contact-term">Civic Helpline</dt>
+              <dd><a href="tel:+91112" class="gjs-t-link">112</a></dd>
+            </div>
+          </dl>
+        </div>
+      </div>
+      <div class="footer-bottom-bar">
+        <p>© <span>2025</span> Venkateshpura Lake Initiative. All rights reserved.</p>
+      </div>
+    </footer>
+    <script type="text/javascript">
+      function googleTranslateElementInit() {
+        new google.translate.TranslateElement({pageLanguage: 'en', includedLanguages: 'kn', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+      }
+      </script>
+      <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>>
+      </body>s
+</html>
