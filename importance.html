@@ -9,163 +9,196 @@
   <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-    <header id="i4cmg" class="header-bar">
-        <div id="i4w4y" class="header-container">
-          <div id="i0zog" class="brand-group">
-            <span class="logo">Venkateshpura Lake</span>
-          </div>
-          <button type="button"
-                  id="i4cmg-toggle"
-                  aria-label="Open menu"
-                  aria-controls="i4cmg-nav"
-                  aria-expanded="false"
-                  class="nav-toggle">
-            <img src="https://api.iconify.design/lucide-menu.svg?color=currentColor&amp;width=20&amp;height=20"
-                 alt="Menu icon"
-                 width="20"
-                 height="20"
-                 loading="lazy"
-                 id="i0hnn0u"/>
+  <header id="i4cmg" class="header-bar">
+    <div class="header-container">
+      <div class="brand-group">
+        <span class="logo">Venkateshpura Lake</span>
+      </div>
+      <button type="button"
+              id="i4cmg-toggle"
+              aria-label="Open menu"
+              aria-controls="i4cmg-nav"
+              aria-expanded="false"
+              class="nav-toggle"
+              style="display:none;">
+        <img src="https://api.iconify.design/lucide-menu.svg?color=currentColor&amp;width=20&amp;height=20"
+             alt="Menu icon"
+             width="20"
+             height="20"
+             loading="lazy"
+             id="i0hnn0u"/>
+      </button>
+      <nav id="i4cmg-nav" class="primary-navigation">
+        <a href="./index.html" class="gjs-t-link nav-link-dashboard">Dashboard</a>
+        <div class="dropdown-nav about-dropdown" style="display:inline-block; position:relative;">
+          <button type="button" class="gjs-t-link nav-link-dashboard dropdown-toggle" aria-haspopup="true" aria-expanded="false" style="background:none; border:none; cursor:pointer;">
+            About &#9662;
           </button>
-          <nav class="primary-navigation">
-            <a href="./index.html" class="gjs-t-link nav-link-dashboard">Dashboard</a>
-            
-            <div class="dropdown-nav about-dropdown" style="display:inline-block; position:relative;">
-              <button type="button" class="gjs-t-link nav-link-dashboard dropdown-toggle" aria-haspopup="true" aria-expanded="false" style="background:none; border:none; cursor:pointer;">
-                About &#9662;
-              </button>
-              <ul class="dropdown-menu" style="display:none; position:absolute; left:0; top:100%; min-width:180px; background:white; box-shadow:0 2px 10px rgba(0,0,0,0.08); border-radius:0.4em; z-index:1000; margin:0; padding:0;">
-                <li style="list-style:none; margin:0;"><a href="./history.html" class="gjs-t-link nav-link-dashboard" style="display:block; padding:0.65em 1.2em;">History</a></li>
-                <li style="list-style:none; margin:0;"><a href="./flora-and-fauna.html" class="gjs-t-link nav-link-dashboard" style="display:block; padding:0.65em 1.2em;">Flora and Fauna</a></li>
-                <li style="list-style:none; margin:0;"><a href="./importance.html" class="gjs-t-link nav-link-dashboard" style="display:block; padding:0.65em 1.2em;">Importance of Lakes</a></li>
-              </ul>
-            </div>
-  
-            <a href="./alerts.html" class="gjs-t-link nav-link-dashboard">Alerts</a>
-            <a href="./report-issue.html" class="gjs-t-button nav-button-report-issue">Report Issue</a>
-            <div style="display: inline-block; position: relative; vertical-align: middle;">
-              <button type="button" 
-                aria-label="Translate page"
-                id="translate-toggle-btn"
-                style="height: 28px; min-width: 38px; background: #eef3f7; border: 1px solid #dde4ee; border-radius: 5px; padding: 2px 10px; display: flex; align-items: center; gap: 6px; cursor: pointer; transition: background 0.18s;">
-                <img src="https://api.iconify.design/ic:round-translate.svg?color=%233c8574" alt="Translate" width="18" height="18" style="vertical-align: middle;" />
-                <span style="font-size: 0.98em; color: #326b6f; font-family: 'Inter',sans-serif;">Translate</span>
-              </button>
-              <div id="google_translate_element"
-                   style="display: none; position: absolute; left: 0; top: 110%; background: #fff; z-index: 1700; border: 1px solid #dde4ee; border-radius: 5px; min-width: 145px; box-shadow: 0 4px 18px rgba(60,133,116,0.12); padding: 9px 12px;">
-              </div>
-            </div>
-            <script>
-            (function() {
-              var container = document.currentScript
-                ? document.currentScript.previousElementSibling
-                : document.querySelector('[id="google_translate_element"]').parentElement;
-              var btn = container.querySelector('#translate-toggle-btn');
-              var panel = container.querySelector('#google_translate_element');
-  
-              btn.addEventListener('click', function(e) {
-                e.stopPropagation();
-                var isVisible = panel.style.display === 'block';
-                panel.style.display = isVisible ? 'none' : 'block';
-              });
-  
-              // Hide panel when clicking outside
-              document.addEventListener('click', function(e) {
-                if (!container.contains(e.target)) {
-                  panel.style.display = 'none';
-                }
-              });
-  
-              // Optional: Keyboard navigation (ESC to close)
-              btn.addEventListener('keydown', function(e) {
-                if (e.key === "Escape") {
-                  panel.style.display = 'none';
-                }
-              });
-            })();
-            </script>
-          </nav>
-          <script>
-          // Dropdown "About" toggle behavior (desktop-friendly, simple)
-          (function() {
-            var dropdown = document.querySelector('.about-dropdown');
-            if (!dropdown) return;
-  
-            var btn = dropdown.querySelector('.dropdown-toggle');
-            var menu = dropdown.querySelector('.dropdown-menu');
-  
-            // Open dropdown on button click or focus
-            btn.addEventListener('click', function(e) {
-              e.stopPropagation();
-              var isOpen = menu.style.display === 'block';
-              menu.style.display = isOpen ? 'none' : 'block';
-              btn.setAttribute('aria-expanded', !isOpen);
-            });
-  
-            // Close menu when clicking elsewhere
-            document.addEventListener('click', function(e) {
-              if (!dropdown.contains(e.target)) {
-                menu.style.display = 'none';
-                btn.setAttribute('aria-expanded', 'false');
-              }
-            });
-  
-            // Optionally: open on mouseenter, close on mouseleave (desktop only)
-            dropdown.addEventListener('mouseenter', function() {
-              if (window.innerWidth > 780) {
-                menu.style.display = 'block';
-                btn.setAttribute('aria-expanded', 'true');
-              }
-            });
-            dropdown.addEventListener('mouseleave', function() {
-              if (window.innerWidth > 780) {
-                menu.style.display = 'none';
-                btn.setAttribute('aria-expanded', 'false');
-              }
-            });
-  
-            // Keyboard navigation (Escape key closes)
-            btn.addEventListener('keydown', function(e) {
-              if (e.key === "Escape") {
-                menu.style.display = 'none';
-                btn.setAttribute('aria-expanded', 'false');
-              }
-            });
-          })();
-          </script>
+          <ul class="dropdown-menu" style="display:none; position:absolute; left:0; top:100%; min-width:180px; background:white; box-shadow:0 2px 10px rgba(0,0,0,0.08); border-radius:0.4em; z-index:1000; margin:0; padding:0;">
+            <li style="list-style:none; margin:0;"><a href="./history.html" class="gjs-t-link nav-link-dashboard" style="display:block; padding:0.65em 1.2em;">History</a></li>
+            <li style="list-style:none; margin:0;"><a href="./flora-and-fauna.html" class="gjs-t-link nav-link-dashboard" style="display:block; padding:0.65em 1.2em;">Flora and Fauna</a></li>
+            <li style="list-style:none; margin:0;"><a href="./importance.html" class="gjs-t-link nav-link-dashboard" style="display:block; padding:0.65em 1.2em;">Importance of Lakes</a></li>
+          </ul>
+        </div>
+        <a href="./alerts.html" class="gjs-t-link nav-link-dashboard">Alerts</a>
+        <a href="./report-issue.html" class="gjs-t-button nav-button-report-issue">Report Issue</a>
+        <div style="display: inline-block; position: relative; vertical-align: middle;">
+          <button type="button" 
+            aria-label="Translate page"
+            id="translate-toggle-btn"
+            style="height: 28px; min-width: 38px; background: #eef3f7; border: 1px solid #dde4ee; border-radius: 5px; padding: 2px 10px; display: flex; align-items: center; gap: 6px; cursor: pointer; transition: background 0.18s;">
+            <img src="https://api.iconify.design/ic:round-translate.svg?color=%233c8574" alt="Translate" width="18" height="18" style="vertical-align: middle;" />
+            <span style="font-size: 0.98em; color: #326b6f; font-family: 'Inter',sans-serif;">Translate</span>
+          </button>
+          <div id="google_translate_element"
+               style="display: none; position: absolute; left: 0; top: 110%; background: #fff; z-index: 1700; border: 1px solid #dde4ee; border-radius: 5px; min-width: 145px; box-shadow: 0 4px 18px rgba(60,133,116,0.12); padding: 9px 12px;">
+          </div>
         </div>
         <script>
-          (function () {
-            var header = document.getElementById('i4cmg');
-            if (!header) return;
-            var toggleBtn = header.querySelector('#i4cmg-toggle');
-            var nav = header.querySelector('#i4cmg-nav');
-            if (!toggleBtn || !nav) return;
-  
-            function closeMenu() {
-              nav.classList.remove('is-open');
-              toggleBtn.setAttribute('aria-expanded', 'false');
-              toggleBtn.setAttribute('aria-label', 'Open menu');
+        (function() {
+          var container = document.currentScript
+            ? document.currentScript.previousElementSibling
+            : document.querySelector('[id="google_translate_element"]').parentElement;
+          var btn = container.querySelector('#translate-toggle-btn');
+          var panel = container.querySelector('#google_translate_element');
+
+          btn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            var isVisible = panel.style.display === 'block';
+            panel.style.display = isVisible ? 'none' : 'block';
+          });
+
+          // Hide panel when clicking outside
+          document.addEventListener('click', function(e) {
+            if (!container.contains(e.target)) {
+              panel.style.display = 'none';
             }
-  
-            toggleBtn.addEventListener('click', function () {
-              var isOpen = nav.classList.toggle('is-open');
-              toggleBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-              toggleBtn.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
-            });
-  
-            nav.querySelectorAll('a').forEach(function (link) {
-              link.addEventListener('click', closeMenu);
-            });
-  
-            window.addEventListener('resize', function () {
-              if (window.innerWidth > 992) {
-                closeMenu();
-              }
-            });
-          })();
+          });
+
+          // Optional: Keyboard navigation (ESC to close)
+          btn.addEventListener('keydown', function(e) {
+            if (e.key === "Escape") {
+              panel.style.display = 'none';
+            }
+          });
+        })();
         </script>
-      </header>
+      </nav>
+      <script>
+      // Dropdown "About" toggle behavior (desktop-friendly, simple)
+      (function() {
+        var dropdown = document.querySelector('.about-dropdown');
+        if (!dropdown) return;
+
+        var btn = dropdown.querySelector('.dropdown-toggle');
+        var menu = dropdown.querySelector('.dropdown-menu');
+
+        // Open dropdown on button click or focus
+        btn.addEventListener('click', function(e) {
+          e.stopPropagation();
+          var isOpen = menu.style.display === 'block';
+          menu.style.display = isOpen ? 'none' : 'block';
+          btn.setAttribute('aria-expanded', !isOpen);
+        });
+
+        // Close menu when clicking elsewhere
+        document.addEventListener('click', function(e) {
+          if (!dropdown.contains(e.target)) {
+            menu.style.display = 'none';
+            btn.setAttribute('aria-expanded', 'false');
+          }
+        });
+
+        // Optionally: open on mouseenter, close on mouseleave (desktop only)
+        dropdown.addEventListener('mouseenter', function() {
+          if (window.innerWidth > 780) {
+            menu.style.display = 'block';
+            btn.setAttribute('aria-expanded', 'true');
+          }
+        });
+        dropdown.addEventListener('mouseleave', function() {
+          if (window.innerWidth > 780) {
+            menu.style.display = 'none';
+            btn.setAttribute('aria-expanded', 'false');
+          }
+        });
+
+        // Keyboard navigation (Escape key closes)
+        btn.addEventListener('keydown', function(e) {
+          if (e.key === "Escape") {
+            menu.style.display = 'none';
+            btn.setAttribute('aria-expanded', 'false');
+          }
+        });
+      })();
+      </script>
+    </div>
+    <script>
+      // Responsive Navigation Script
+      (function () {
+        var header = document.getElementById('i4cmg');
+        if (!header) return;
+        var toggleBtn = header.querySelector('#i4cmg-toggle');
+        var nav = header.querySelector('#i4cmg-nav');
+        var headerContainer = header.querySelector('.header-container');
+        
+        // Helper: updates desktop/mobile nav toggle display based on screen width
+        function updateNavDisplay() {
+          if (window.innerWidth <= 780) {
+            toggleBtn.style.display = 'block';
+            nav.classList.add('mobile-nav');
+            nav.classList.remove('is-open');
+            toggleBtn.setAttribute('aria-expanded', 'false');
+            toggleBtn.setAttribute('aria-label', 'Open menu');
+          } else {
+            toggleBtn.style.display = 'none';
+            nav.classList.remove('mobile-nav', 'is-open');
+            toggleBtn.setAttribute('aria-expanded', 'false');
+            toggleBtn.setAttribute('aria-label', 'Open menu');
+            nav.style.display = '';
+          }
+        }
+
+        function closeMenu() {
+          nav.classList.remove('is-open');
+          toggleBtn.setAttribute('aria-expanded', 'false');
+          toggleBtn.setAttribute('aria-label', 'Open menu');
+        }
+
+        function openMenu() {
+          nav.classList.add('is-open');
+          toggleBtn.setAttribute('aria-expanded', 'true');
+          toggleBtn.setAttribute('aria-label', 'Close menu');
+        }
+
+        toggleBtn.addEventListener('click', function () {
+          var isOpen = nav.classList.toggle('is-open');
+          toggleBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+          toggleBtn.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
+        });
+
+        nav.querySelectorAll('a').forEach(function (link) {
+          link.addEventListener('click', function(){
+            if(window.innerWidth <= 780) closeMenu();
+          });
+        });
+
+        // Close nav if resizing to desktop
+        window.addEventListener('resize', function () {
+          updateNavDisplay();
+        });
+
+        // Initial responsive setup
+        updateNavDisplay();
+
+        // Hide nav when clicking outside in mobile mode
+        document.addEventListener('click', function(e){
+          if(window.innerWidth > 780) return;
+          if(!header.contains(e.target)) closeMenu();
+        });
+      })();
+    </script>
+  </header>
   <main>
     <section class="hero-section">
       <div class="hero-grid">

@@ -12,16 +12,27 @@
     <link rel="stylesheet" href="./style.css">
   </head>
   <body id="ik5mygk" class="gjs-t-body cls-7841rd">
-    <header class="site-header" id="iwqwale">
+    <header id="i4cmg" class="header-bar">
       <div class="header-container">
-        <a href="./index.html" class="gjs-t-link brand-link">
-          <div class="brand-group">
-            <span class="logo">Venkateshpura Lake</span>
-          </div>
-        </a>
-        <nav class="primary-navigation">
+        <div class="brand-group">
+          <span class="logo">Venkateshpura Lake</span>
+        </div>
+        <button type="button"
+                id="i4cmg-toggle"
+                aria-label="Open menu"
+                aria-controls="i4cmg-nav"
+                aria-expanded="false"
+                class="nav-toggle"
+                style="display:none;">
+          <img src="https://api.iconify.design/lucide-menu.svg?color=currentColor&amp;width=20&amp;height=20"
+               alt="Menu icon"
+               width="20"
+               height="20"
+               loading="lazy"
+               id="i0hnn0u"/>
+        </button>
+        <nav id="i4cmg-nav" class="primary-navigation">
           <a href="./index.html" class="gjs-t-link nav-link-dashboard">Dashboard</a>
-          
           <div class="dropdown-nav about-dropdown" style="display:inline-block; position:relative;">
             <button type="button" class="gjs-t-link nav-link-dashboard dropdown-toggle" aria-haspopup="true" aria-expanded="false" style="background:none; border:none; cursor:pointer;">
               About &#9662;
@@ -32,7 +43,6 @@
               <li style="list-style:none; margin:0;"><a href="./importance.html" class="gjs-t-link nav-link-dashboard" style="display:block; padding:0.65em 1.2em;">Importance of Lakes</a></li>
             </ul>
           </div>
-
           <a href="./alerts.html" class="gjs-t-link nav-link-dashboard">Alerts</a>
           <a href="./report-issue.html" class="gjs-t-button nav-button-report-issue">Report Issue</a>
           <div style="display: inline-block; position: relative; vertical-align: middle;">
@@ -127,17 +137,41 @@
         </script>
       </div>
       <script>
+        // Responsive Navigation Script
         (function () {
           var header = document.getElementById('i4cmg');
           if (!header) return;
           var toggleBtn = header.querySelector('#i4cmg-toggle');
           var nav = header.querySelector('#i4cmg-nav');
-          if (!toggleBtn || !nav) return;
+          var headerContainer = header.querySelector('.header-container');
+          
+          // Helper: updates desktop/mobile nav toggle display based on screen width
+          function updateNavDisplay() {
+            if (window.innerWidth <= 780) {
+              toggleBtn.style.display = 'block';
+              nav.classList.add('mobile-nav');
+              nav.classList.remove('is-open');
+              toggleBtn.setAttribute('aria-expanded', 'false');
+              toggleBtn.setAttribute('aria-label', 'Open menu');
+            } else {
+              toggleBtn.style.display = 'none';
+              nav.classList.remove('mobile-nav', 'is-open');
+              toggleBtn.setAttribute('aria-expanded', 'false');
+              toggleBtn.setAttribute('aria-label', 'Open menu');
+              nav.style.display = '';
+            }
+          }
 
           function closeMenu() {
             nav.classList.remove('is-open');
             toggleBtn.setAttribute('aria-expanded', 'false');
             toggleBtn.setAttribute('aria-label', 'Open menu');
+          }
+
+          function openMenu() {
+            nav.classList.add('is-open');
+            toggleBtn.setAttribute('aria-expanded', 'true');
+            toggleBtn.setAttribute('aria-label', 'Close menu');
           }
 
           toggleBtn.addEventListener('click', function () {
@@ -147,17 +181,26 @@
           });
 
           nav.querySelectorAll('a').forEach(function (link) {
-            link.addEventListener('click', closeMenu);
+            link.addEventListener('click', function(){
+              if(window.innerWidth <= 780) closeMenu();
+            });
           });
 
+          // Close nav if resizing to desktop
           window.addEventListener('resize', function () {
-            if (window.innerWidth > 992) {
-              closeMenu();
-            }
+            updateNavDisplay();
+          });
+
+          // Initial responsive setup
+          updateNavDisplay();
+
+          // Hide nav when clicking outside in mobile mode
+          document.addEventListener('click', function(e){
+            if(window.innerWidth > 780) return;
+            if(!header.contains(e.target)) closeMenu();
           });
         })();
       </script>
-      </div>
     </header>
     <main class="main-content" id="i99r272">
       <section class="hero-section" id="iu66um3">
