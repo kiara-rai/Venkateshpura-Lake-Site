@@ -228,140 +228,7 @@
         </div>
       </section>
       <!-- ===== Improved Chat Widget (history + bubbles) ===== -->
-      <style>
-        /* Center the chat widget and add a beautified box */
-        #chatWidget {
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          justify-content: center;
-          margin: 32px auto;
-          max-width: 800px;
-          width: 100%;
-          background: #fafcff;
-          border-radius: 16px;
-          box-shadow: 0 8px 32px 0 rgba(60,70,120,0.10), 0 1.5px 8px rgba(106,119,151,0.06);
-          padding: 28px 18px 14px 18px;
-          border: 1.5px solid #e9ecfa;
-        }
-        #chatHistory {
-          width: 100%;
-          min-height: 120px;
-          max-height: 280px;
-          overflow-y: auto;
-          margin: 0 0 16px 0;
-          padding: 0 2px;
-        }
-        #chatControls {
-          display: flex;
-          gap: 10px;
-          width: 100%;
-          margin-top: 0;
-        }
-        #chat_input {
-          flex: 1;
-          border: 1px solid #b6bee7;
-          border-radius: 14px;
-          padding: 9px 14px;
-          font-size: 1rem;
-          font-family: inherit;
-          background: #f7f9ff;
-          transition: border 0.16s;
-        }
-        #chat_input:focus {
-          outline: none;
-          border-color: #406aff;
-          background: #f4f7ff;
-        }
-        /* Style for the Send and Mic buttons */
-        #chat_send, #chat_mic {
-          background: linear-gradient(90deg,#406aff 0,#568cf9 100%);
-          color: #fff;
-          border: none;
-          border-radius: 12px;
-          padding: 0 22px;
-          font-weight: 600;
-          font-size: 1rem;
-          letter-spacing: 0.03em;
-          cursor: pointer;
-          transition: background 0.2s;
-          box-shadow: 0 0.5px 6px rgba(64,106,255,0.13);
-          line-height: 1;
-        }
-        #chat_mic {
-            padding: 0 14px;
-            font-size: 1.1rem;
-        }
-        #chat_send:disabled, #chat_mic:disabled {
-          background: #e1e7fb;
-          color: #7d89b6;
-          cursor: not-allowed;
-        }
-        /* Chat bubbles */
-        .bubble {
-          display: inline-block;
-          word-break: break-word;
-          margin: 8px 0;
-          padding: 9px 15px;
-          max-width: 85%;
-          border-radius: 17px;
-          font-size: 1rem;
-          line-height: 1.5;
-          box-shadow: 0 1.5px 8px 0 rgba(106,119,151,0.07);
-          position: relative; 
-          clear: both;
-        }
-        .bubble.user {
-          background: #d7e3ff;
-          color: #21458b;
-          align-self: flex-end;
-          margin-left: auto;
-          margin-right: 0;
-        }
-        .bubble.bot {
-          background: #f0f5ff;
-          color: #1f375b;
-          align-self: flex-start;
-          margin-right: auto;
-          margin-left: 0;
-          /* Padding is now reset to default */
-        }
-        /* NEW STYLE: Inline Audio Button */
-        .inline-audio-btn {
-            background: none;
-            border: none;
-            color: #406aff; /* Blue to match Send button */
-            cursor: pointer;
-            font-size: 0.9rem; /* Smaller font size to fit inline */
-            padding: 0 0 0 8px; /* Small left margin */
-            margin: 0;
-            display: inline-block;
-            vertical-align: middle;
-            line-height: 1;
-        }
-        .inline-audio-btn:hover {
-            color: #568cf9;
-        }
-        /* Loading dots animation */
-        .loading-dot {
-          display: inline-block;
-          width: 18px;
-          vertical-align: middle;
-          text-align: left;
-        }
-        .loading-dot::after {
-          content: '●●●';
-          color: #7c91cb;
-          letter-spacing: 2px;
-          animation: loadingDotsAnim 1.2s infinite steps(3);
-        }
-        @keyframes loadingDotsAnim {
-          0%    {content:'●  ';}
-          33%   {content:'●● ';}
-          66%   {content:'●●●';}
-          100%  {content:'●  ';}
-        }
-      </style>
+
       <div aria-live="polite" id="chatWidget">
         <h2 id="iu38j" class="gjs-t-h2 metrics-title">Neeru AI</h2>
         <div id="chatHistory"></div>
@@ -669,9 +536,9 @@
              <!-- flourish code
           <div class="flourish-embed flourish-chart" data-src="visualisation/26208981"><script src="https://public.flourish.studio/resources/embed.js"></script><noscript><img src="https://public.flourish.studio/visualisation/26208981/thumbnail" width="100%" alt="chart visualization" /></noscript></div>
         flourish code end -->
+
+
            <!-- Lake insights panel — drop into your site -->
-
-
 <section id="lake-insights" aria-labelledby="lake-insights-title">
   <h2 id="iu38j" class="gjs-t-h2 metrics-title">AI Powered Summary</h2>
 
@@ -679,7 +546,12 @@
     Click each card to expand practical actions.
   </p>
 
-  <div style="display:grid; grid-template-columns:repeat(3, 1fr); gap:40px; margin-top:12px;">
+  <div style="
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 40px;
+  margin-top: 12px;
+">
 
     <!-- DO card (Bad) -->
     <article class="metric-card bad" data-metric="DO" tabindex="0"
@@ -808,7 +680,7 @@
     </article>
 
   </div>
-
+</section>
   <!-- Action buttons 
   <div style="display:flex; gap:8px; margin-top:16px;">
     <button class="copy-summary" aria-label="Copy summary">Copy short summary</button>
