@@ -1820,11 +1820,12 @@ video {
 .alert-card-algae {
   grid-column: span 6 / span 6;
   padding: 1.25rem;
-  border-radius: 1rem;
-  border-width: 1px;
-  border-color: rgb(226 232 240 / 1);
-  background-color: rgb(255 255 255 / 1);
+  border-radius:10px; 
+  padding:40px;  
+  border:1px solid rgb(226 232 240 / 1);
+  box-shadow:0 2px 8px rgba(23, 23, 23, 0.035);
 }
+
 .alert-header {
   display: flex;
   align-items: flex-start;
