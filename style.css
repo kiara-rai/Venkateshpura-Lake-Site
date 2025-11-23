@@ -84,7 +84,7 @@ a:hover,
   position: sticky;
   top: 0;
   z-index: 100;
-  box-shadow: 0 10px 30px -24px rgba(0, 0, 0, 0.35);
+  box-shadow: 0 10px 20px -24px rgba(45, 45, 45, 0.35);
 }
 
 .header-container,
@@ -201,14 +201,6 @@ a:hover,
     transition: background-color 0.3s ease;
 }
 
-.hero-section {
-    background: #FFDABE;
-    background: linear-gradient(90deg, rgba(255, 218, 190, 0.25) 0%, rgba(194, 214, 252, 0.34) 100%);
-  position: relative;
-  overflow: hidden;
-  border-radius: 10px;
-  margin-top: 40px;
-}
 .hero-heading {font-size: clamp(2rem, 4vw, 3rem);
     margin-bottom: 1rem;} 
 
@@ -217,6 +209,7 @@ a:hover,
   position: absolute;
   inset: 0;
   pointer-events: none;
+  border-radius: 10px;
 }
 
 .hero-container,
@@ -1188,20 +1181,20 @@ video {
   opacity: 0.9;
 }
 .hero-section {
+  /* Use only one background property for the gradient */
+  background: linear-gradient(90deg, rgba(255,218,190,0.25) 0%, rgba(194,214,252,0.34) 100%);
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px; /* This applies to all 4 corners */
+  margin: 40px auto 2rem auto; /* Combined margin-top, margin-left/right, margin-bottom */
   width: 100%;
-  background-color: rgb(255 255 255 / 1);
   max-width: 72rem;
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
-  padding-top: 2.5rem;
-  padding-bottom: 1.5rem;
+  padding: 2.5rem 1.5rem 1.5rem 1.5rem; /* top right bottom left */
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
   gap: 2rem;
-  margin-bottom: 2rem;
+  box-shadow:0 2px 8px rgba(23, 23, 23, 0.035);
 }
 .hero-container {
   max-width: 80rem;
@@ -1211,7 +1204,6 @@ video {
   padding-right: 2rem;
   padding-top: 2.5rem;
   padding-bottom: 2.5rem;
-
 }
 .hero-grid {
   display: grid;
@@ -1816,14 +1808,14 @@ video {
   display: grid;
   grid-template-columns: repeat(12, minmax(0, 1fr));
   gap: 1.5rem;
+  
 }
 .alert-card-algae {
   grid-column: span 6 / span 6;
-  padding: 1.25rem;
-  border-radius:10px; 
-  padding:40px;  
-  border:1px solid rgb(226 232 240 / 1);
-  box-shadow:0 2px 8px rgba(23, 23, 23, 0.035);
+  border-radius:10px;
+   padding:40px; 
+   box-shadow:0 2px 8px rgba(23, 23, 23, 0.035) !important;
+   border:1px solid #f0f0f0;
 }
 
 .alert-header {
@@ -1869,8 +1861,9 @@ video {
   padding: 1.25rem;
   border-radius: 1rem;
   border-width: 1px;
-  border-color: rgb(226 232 240 / 1);
+  border-color: #f0f0f0;
   background-color: rgb(250, 179, 179);
+  box-shadow:0 2px 8px rgba(23, 23, 23, 0.035) !important
 }
 .recommendations-grid {
   margin-top: 1.5rem;
@@ -1881,10 +1874,11 @@ video {
 .recommendation-card {
   grid-column: span 3 / span 3;
   padding: 1.25rem;
-  border-radius: 1rem;
+  border-radius: 10px;
   border-width: 1px;
-  border-color: rgb(226 232 240 / 1);
+  border-color: #f0f0f0;
   background-color: rgb(255 255 255 / 1);
+  box-shadow:0 2px 8px rgba(23, 23, 23, 0.035) !important;
 }
 .recommendation-header {
   display: flex;
@@ -1913,6 +1907,7 @@ video {
   padding-right: 2rem;
   padding-top: 2rem;
   padding-bottom: 2rem;
+  
 }
 .report-grid {
   display: grid;
@@ -1929,6 +1924,10 @@ video {
   display: flex;
   flex-direction: column;
   gap: 1.25rem;
+  border-radius:10px;
+   padding:40px; 
+   box-shadow:0 2px 8px rgba(23, 23, 23, 0.035) !important;
+   border:1px solid #f0f0f0;
 }
 .report-title {
   font-weight: 600;
@@ -2043,11 +2042,13 @@ video {
 }
 .contact-aside {
   grid-column: span 5 / span 5;
-  padding: 1.5rem;
-  border-radius: 1rem;
   border-width: 1px;
   border-color: rgb(226 232 240 / 1);
   background-color: rgb(248 250 252 / 1);
+  border-radius:10px;
+   padding:40px; 
+   box-shadow:0 2px 8px rgba(23, 23, 23, 0.035) !important;
+   border:1px solid #f0f0f0;
 }
 .contact-title {
   font-weight: 600;
@@ -2104,7 +2105,7 @@ video {
   align-items: flex-start;
   justify-content: space-between;
   gap: 2rem;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr)); 
 }
 .footer-grid {
   display: grid;
@@ -3381,6 +3382,7 @@ video {
 }
 .current-alerts-section {
   margin-top: 2.5rem;
+  border-radius:10px;
 }
 .section-header-current-alerts {
   display: flex;
@@ -3621,6 +3623,7 @@ video {
 }
 .past-alerts-section {
   margin-top: 3rem;
+  
 }
 .section-title-past-alerts {
   margin-bottom: 1rem;
@@ -3803,6 +3806,7 @@ video {
 }
 .subscription-section {
   margin-top: 3rem;
+
 }
 .subscription-header {
   display: flex;
@@ -3812,8 +3816,11 @@ video {
 }
 .subscription-card {
   border-width: 1px;
-  border-radius: 0.75rem;
   padding: 1.5rem;
+  border-radius:10px;
+   padding:40px; 
+   box-shadow:0 2px 8px rgba(23, 23, 23, 0.035) !important;
+   border:1px solid #f0f0f0;
 }
 .subscription-form {
   display: flex;
@@ -5437,10 +5444,7 @@ video {
     padding-left: 1rem;
     padding-right: 1rem;
   }
-  .footer-container {
-    padding-left: 1rem;
-    padding-right: 1rem;
-  }
+
   .footer-links {
     grid-column: span 12 / span 12;
   }
