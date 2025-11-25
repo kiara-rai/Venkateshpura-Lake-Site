@@ -214,21 +214,90 @@
         </figure>
       </section> -->
       <section class="instructions-section">
-        <div class="gjs-t-border instructions-card" id="ikz1jcj">
-          <h2 class="gjs-t-h2 instructions-title">What to report</h2>
-          <ul class="instructions-list">
-            <li>Pollution: oil, chemicals, foam, unusual odors, or discoloration in water.</li>
-            <li>Littering: plastic, glass, construction debris, or dumping activities.</li>
-            <li>Wildlife disturbance: injured animals, illegal fishing, trapping, or feeding.</li>
-            <li>Water quality: sudden fish deaths, algal blooms, or unusual turbidity.</li>
-            <li>Other concerns affecting safety, access, or habitat around the lake.</li>
-          </ul>
-          <p class="instructions-note">Your report helps local authorities and community groups respond faster. We only use contact details to follow up for clarification.</p>
+        <div class="instructions-grid" style="display: flex; flex-wrap: wrap; gap: 28px; margin-bottom: 34px;">
+          <!-- Section 1: What Issues to Report -->
+          <div class="gjs-t-border instructions-card" style="flex: 2; min-width: 270px; background: #fcfeff;">
+            <div class="instructions-header" style="display: flex; align-items: center; gap: 10px; margin-bottom: 18px;">
+              <img src="https://api.iconify.design/lucide-search-check.svg" alt="What to report icon" width="24" height="24" style="opacity: 0.88;"/>
+              <h2 class="gjs-t-h2 instructions-title" style="margin:0;">What You Can Report</h2>
+            </div>
+            <ul class="instructions-list" style="padding-left: 22px; margin-bottom: 18px;">
+              <li>
+                <strong>Pollution</strong>
+                <ul>
+                  <li style="list-style: disc; margin-left: 18px; color: #5a6d5a;">Oil, chemicals, foam</li>
+                  <li style="list-style: disc; margin-left: 18px; color: #5a6d5a;">Unusual odors</li>
+                  <li style="list-style: disc; margin-left: 18px; color: #5a6d5a;">Discoloration in water</li>
+                </ul>
+              </li>
+              <li>
+                <strong>Littering & Dumping</strong>
+                <ul>
+                  <li style="list-style: disc; margin-left: 18px; color: #5a6d5a;">Plastic, glass, debris</li>
+                  <li style="list-style: disc; margin-left: 18px; color: #5a6d5a;">Construction waste, dumping activities</li>
+                </ul>
+              </li>
+              <li>
+                <strong>Wildlife Disturbance</strong>
+                <ul>
+                  <li style="list-style: disc; margin-left: 18px; color: #5a6d5a;">Injured animals</li>
+                  <li style="list-style: disc; margin-left: 18px; color: #5a6d5a;">Illegal fishing, trapping, or feeding</li>
+                </ul>
+              </li>
+              <li>
+                <strong>Water Quality Issues</strong>
+                <ul>
+                  <li style="list-style: disc; margin-left: 18px; color: #5a6d5a;">Fish deaths, algal blooms</li>
+                  <li style="list-style: disc; margin-left: 18px; color: #5a6d5a;">Unusual turbidity</li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+          <!-- Section 2: Other Concerns & Examples -->
+          <div class="gjs-t-border instructions-card" style="flex:1; min-width: 220px; background: #fefcfa; display: flex; flex-direction: column; justify-content: space-between;">
+            <div>
+              <div class="instructions-header" style="display: flex; align-items: center; gap: 10px; margin-bottom: 10px;">
+                <img src="https://api.iconify.design/lucide-alert-triangle.svg" alt="Other concerns icon" width="22" height="22" style="opacity: 0.83; color: #d57e00;"/>
+                <h3 class="gjs-t-h3" style="margin:0; font-size: 1.1em;">Other Concerns</h3>
+              </div>
+              <ul style="margin-bottom:18px; padding-left:20px;">
+                <li>Blocked pathways or entrances</li>
+                <li>Damaged signage or broken fences</li>
+                <li>Illegal construction or encroachment</li>
+                <li>Access or safety issues</li>
+                <li>Habitat threats</li>
+              </ul>
+              <div class="instructions-examples-block" style="background: #f6faff; border-radius:10px; padding: 11px 14px; margin-bottom: 0;">
+                <span style="font-size:0.95em; color: #506660;">
+                  <strong>Examples:</strong><br/>
+                  &mdash; Sudden drop in water level<br/>
+                  &mdash; Bonfires or loud gatherings<br/>
+                  &mdash; Barbed wire within wetland area
+                </span>
+              </div>
+            </div>
+          </div>
+          <!-- Section 3: Reporting Note / Reminder -->
+          <div class="gjs-t-border instructions-card" style="flex-basis:100%; background: linear-gradient(90deg,#fafdff 70%,#e6f9f4 100%); margin-top: 12px;">
+            <div class="instructions-footer" style="display:flex; align-items:center; gap:10px;">
+              <img src="https://api.iconify.design/lucide-info.svg" alt="Info icon" width="20" height="20"/>
+              <p class="instructions-note" style="margin: 8px 0; font-size: 1em;">
+                Your report helps local authorities and community groups respond faster.<br/>
+                <span style="font-size:0.98em; color:#6291a3;">We only use contact details if clarification is needed. Personal info is not shared.</span>
+              </p>
+            </div>
+          </div>
         </div>
       </section>
       <section class="form-section">
         
         <form method="post" action="#" novalidate="" class="gjs-t-border issue-reporting-form">
+          <p class="report-intro" style="padding-top: 20px; padding-bottom: 20px;">
+            Notice an issue at the lake? Submit details to help us act quickly. You can use the form below or send an email.
+          </p>
+          <div class="report-actions" style="margin-bottom: 40px;">
+            <a href="mailto:alerts@venkateshpurulake.org?subject=Report%20Issue%20-%20Venkateshpura%20Lake&amp;body=Please%20describe%20the%20issue%20(location%2C%20time%2C%20what%20you%20observed)%3A%0A" class="gjs-t-button report-email-link">Report via Email</a>
+          </div>
           <div class="form-grid">
             <div>
               <label for="name" class="field-label">Name <span class="field-optional-indicator">(optional)</span></label>
@@ -312,6 +381,7 @@
             <li><a href="./index.html" class="gjs-t-link">Dashboard</a></li>
             <li><a href="./history.html" class="gjs-t-link">History</a></li>
             <li><a href="./flora-and-fauna.html" class="gjs-t-link">Flora &amp; Fauna</a></li>
+            <li><a href="./importance.html" class="gjs-t-link">Importance of Lakes</a></li>
             <li><a href="./alerts.html" class="gjs-t-link">Alerts</a></li>
             <li><a href="./report-issue.html" class="gjs-t-link">Report Issue</a></li>
           </ul>

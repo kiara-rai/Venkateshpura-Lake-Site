@@ -218,7 +218,7 @@ a:hover,
 .alerts-container,
 .trends-container,
 .report-container,
-.origin-section,
+
 .restoration-section,
 .community-section,
 .report-issue-section,
@@ -1315,17 +1315,23 @@ video {
   background-color: rgb(255 255 255 / 1);
 }
 .overview-container {
-    max-width: 80%;
-    margin-left: auto;
-    margin-right: auto;
     padding: 40px;
-    background-color: #008e0010;
-    border-radius: 15px;      
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    display: grid; 
+    grid-template-columns: 1fr 2.7fr; 
+    gap: 2.2rem; 
+    align-items: start; 
+    max-width: 80%; 
+    margin-left: auto; 
+    margin-right: auto; 
+    padding: 40px;
+   
   }
 .overview-title {
-  font-weight: 700;
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 100;
+  color: #1f375b;
 }
+
 .overview-paragraph {
   margin-top: 0.75rem;
   color: rgb(71 85 105 / 1);
@@ -1807,7 +1813,7 @@ video {
   grid-column: span 6 / span 6;
   border-radius:10px;
    padding:40px; 
-   box-shadow:0 2px 8px rgba(23, 23, 23, 0.035) !important;
+   box-shadow:0 2px 8px rgba(255, 91, 91, 0.312) !important;
    border:1px solid #f0f0f0;
 }
 
@@ -1856,7 +1862,7 @@ video {
   border-width: 1px;
   border-color: #f0f0f0;
   background-color: rgb(250, 179, 179);
-  box-shadow:0 2px 8px rgba(23, 23, 23, 0.035) !important
+  box-shadow:0 2px 8px rgba(255, 91, 91, 0.312) !important
 }
 .recommendations-grid {
   margin-top: 1.5rem;
@@ -2263,13 +2269,14 @@ video {
 .hero-media-wrapper {
   grid-column: span 5 / span 5;
 }
+
+
 .origin-section {
     max-width: 80%;
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 40px;
     padding: 40px;
-  
     border-radius: 15px;      
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
@@ -2987,6 +2994,7 @@ video {
   display: flex;
   gap: 1rem;
   align-items: flex-start;
+  box-shadow: #008E00;
 }
 .fauna-category-icon {
   margin-top: 0.25rem;
@@ -4757,14 +4765,7 @@ video {
   flex-direction: column;
   gap: 0.75rem;
 }
-#ikx698 .fauna-category-item {
-  display: flex;
-  gap: 0.75rem;
-  align-items: flex-start;
-  border-width: 1px;
-  background-color: #ffffff;
-  padding: 1rem;
-}
+
 #ikx698 .fauna-category-title {
   font-weight: 600;
   color: rgb(15 23 42);
@@ -5007,10 +5008,7 @@ video {
   .hero-image-column {
     grid-column: span 5 / span 5;
   }
-  .overview-container {
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
-  }
+
   .metrics-container {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
@@ -5387,10 +5385,7 @@ video {
   .hero-image {
     height: 11rem;
   }
-  .overview-container {
-    padding-left: 1rem;
-    padding-right: 1rem;
-  }
+  
   .metrics-container {
     padding-left: 1rem;
     padding-right: 1rem;

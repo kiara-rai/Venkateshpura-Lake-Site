@@ -386,15 +386,19 @@
                 <input type="radio" name="delivery" value="sms"/>
                 <span>SMS</span>
               </label>
+              <label class="sms-option-label">
+                <input type="radio" name="delivery" value="whatsapp"/>
+                <span>WhatsApp</span>
+              </label>
             </fieldset>
             <div class="subscriber-inputs-grid">
               <div class="email-input-group">
                 <label for="sub-email" class="email-label">Email address</label>
-                <input type="email" id="sub-email" placeholder="you@example.com" class="gjs-t-border email-input"/>
+                <input type="email" id="sub-email" placeholder="you@example.com" class="gjs-t-border email-input" style="border-style: solid; border-color: #eef3f7;"/>
               </div>
               <div class="phone-input-group">
                 <label for="sub-phone" class="phone-label">Phone number (SMS)</label>
-                <input type="tel" id="sub-phone" placeholder="+91 9XXXXXXXXX" class="gjs-t-border phone-input"/>
+                <input type="tel" id="sub-phone" placeholder="+91 9XXXXXXXXX" class="gjs-t-border phone-input" style="border-style: solid; border-color: #eef3f7;"/>
               </div>
             </div>
             <fieldset class="preferences-fieldset">
@@ -431,6 +435,10 @@
                     <label class="category-cleanliness-label">
                       <input type="checkbox"/>
                       <span>Cleanliness</span>
+                      <label class="category-water-quality-label">
+                        <input type="checkbox" checked/>
+                        <span>Other</span>
+                      </label>
                     </label>
                   </div>
                 </div>
@@ -454,7 +462,6 @@
           </p>
           <div class="report-actions">
             <a href="mailto:alerts@venkateshpurulake.org?subject=Report%20Issue%20-%20Venkateshpura%20Lake&amp;body=Please%20describe%20the%20issue%20(location%2C%20time%2C%20what%20you%20observed)%3A%0A" class="gjs-t-button report-email-link">Report via Email</a>
-            <a href="./index.html" class="gjs-t-link report-dashboard-link">Go to Dashboard</a>
           </div>
           <form method="get" class="report-form">
             <div class="field-name">
@@ -486,11 +493,15 @@
             </div>
             <div class="field-location">
               <label for="rep-location" class="label-location">Location</label>
-              <input type="text" id="rep-location" placeholder="e.g., East bank near trail entrance" class="gjs-t-border input-location" style="border:1px solid #eff1f3"/>
+              <input type="text" id="rep-location" placeholder="e.g., opposite the bee resort space" class="gjs-t-border input-location" style="border:1px solid #eff1f3"/>
             </div>
             <div class="field-description">
               <label for="rep-desc" class="label-description">Description</label>
               <textarea id="rep-desc" rows="4" placeholder="What did you observe? Include time and any photos available." class="gjs-t-border textarea-description" style="border:1px solid #eff1f3"></textarea>
+            </div>
+            <div class="field-image" style="padding-left: 20px; margin-top: 8px; width: 500px;">
+              <label for="rep-image" class="label-image" style="display:block; margin-bottom:6px;">Upload photo (optional)</label>
+              <input type="file" id="rep-image" class="gjs-t-border input-image" accept="image/*" style="border:1px solid #eff1f3; padding:10px; width: 100%; max-width: 330px; box-sizing: border-box;">
             </div>
             <div class="report-submit-wrapper">
               <button type="submit" class="gjs-t-button report-submit-button">Submit Report</button>
@@ -512,10 +523,26 @@
             <li><a href="./index.html" class="gjs-t-link">Dashboard</a></li>
             <li><a href="./history.html" class="gjs-t-link">History</a></li>
             <li><a href="./flora-and-fauna.html" class="gjs-t-link">Flora &amp; Fauna</a></li>
+            <li><a href="./importance.html" class="gjs-t-link">Importance of Lakes</a></li>
             <li><a href="./alerts.html" class="gjs-t-link">Alerts</a></li>
             <li><a href="./report-issue.html" class="gjs-t-link">Report Issue</a></li>
           </ul>
         </div>
+        <div>
+          <h4 class="footer-title">Sources</h4>
+          <dl class="footer-contacts-list">
+            <div class="footer-contact-item">
+              <dd>Auto-sensors (internal sensor network) — indicated on alerts as a source.</dd>
+            </div>
+            <div class="footer-contact-item">
+              <dd>Community reports / visual confirmation — indicated as source for some alerts.</dd>
+            </div>
+            <div class="footer-contact-item">
+              <dd><a href="https://bengaluruurban.nic.in" class="gjs-t-link">BBMP / Environment Dept (civic contact referenced on site)</a></dd>
+            </div>
+          </dl>
+        </div>
+        
         <div>
           <h4 class="footer-title">Contacts</h4>
           <dl class="footer-contacts-list">

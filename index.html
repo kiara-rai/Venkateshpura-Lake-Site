@@ -227,6 +227,29 @@
           </div>
         </div>
       </section>
+      <section>
+        <div class="overview-container">
+          <div>
+            <h2 class="overview-title">Overview</h2>
+          </div>
+          <div>
+            <p class="overview-paragraph">
+              This community-focused platform makes the lake’s health easy to understand by turning scientific data, such as water quality, pH, and other key indicators, into clear visuals and concise insights that explain what changes mean and how they can be addressed. Residents can choose to receive alerts when the lake needs attention and report issues directly through the site.
+              <br>To build awareness and encourage conservation, the dashboard also includes informational pages that document the lake’s ecological story. In addition, AI-powered features, like a chatbot for lake-related questions and a plant identification tool that explains each plant’s ecological role, help make learning more interactive.
+              <br>The goal is to give citizens the tools and information they need to actively care for the lake. In the long run, this model can be replicated for lakes across Bengaluru, supporting wider restoration and community-led stewardship.
+            </p>
+          </div>
+        </div>
+        <style>
+          @media (max-width: 900px) {
+            .overview-container {
+              grid-template-columns: 1fr !important;
+              gap: 1.1rem !important;
+              padding: 26px !important;
+            }
+          }
+        </style>
+      </section>
       <!-- ===== Improved Chat Widget (history + bubbles) ===== -->
 
       <div aria-live="polite" id="chatWidget">
@@ -481,17 +504,7 @@
       </div>
       <!-- Sources-->
        <!-- ===== End Chat Widget ===== --><!-- rest of your page (metrics, charts, etc) -->
-      <section>
-        <div class="overview-container">
-          <h2 class="gjs-t-h2 overview-title">Overview</h2>
-          <p class="overview-paragraph">
-            Monitoring Venkateshpura Lake helps protect biodiversity, supports recreation, and informs timely action.
-            <br> This website gives a monthly overview of the lake’s water quality using real data collected across key parameters like pH, Dissolved Oxygen, BOD, COD, TDS, and Turbidity. Each metric is visualised to show how the lake is changing over time, highlighting improvements, seasonal shifts, and any signs of pollution.
-            You can explore interactive charts, check overall Water Quality Index (WQI) trends, and read simple insights that explain what the data means. The goal is to make environmental monitoring transparent, accessible, and useful for students, citizens, and anyone interested in the health of the lake.
-            <br> Using this dashboard, you can also identify plant species around the lakes and understand how each of them contribute to the local ecosystem.
-          </p> 
-        </div>
-      </section>
+      
       <section id="plant-identifier-section" class="gjs-t-border identifier-section" style="margin:2rem auto;max-width:450px;background:#fafcf8;padding:2rem 1.5rem;border-radius:1.2rem;box-shadow:0 2px 12px rgba(40,66,50,0.06);">
         <h2 id="plant-identifier-heading" class="gjs-t-h2" style="text-align:center;margin-bottom:1.2rem;color:#296240;letter-spacing:0.01em;font-weight:700;">
           Plant Identifier
@@ -541,29 +554,29 @@
            <!-- Lake insights panel — drop into your site -->
 <section id="lake-insights" aria-labelledby="lake-insights-title">
   <h2 id="iu38j" class="gjs-t-h2 metrics-title">AI Powered Summary</h2>
-
   <p>
     Click each card to expand practical actions.
   </p>
 
-  <div style="
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 40px;
-  margin-top: 12px;
-">
+  <div
+    style="
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 40px;
+      margin-top: 12px;
+    "
+    class="lake-metric-card-grid"
+  >
 
     <!-- DO card (Bad) -->
     <article class="metric-card bad" data-metric="DO" tabindex="0"
              style="border-radius:10px; padding:40px; box-shadow:0 2px 8px rgba(23, 23, 23, 0.035); border:1px solid #f0f0f0;">
       <div style="display:flex; align-items:center; gap:10px;">
-        <div style="font-size:20px; font-weight:700; ">Dissolved Oxygen (DO) — <span style="font-weight:600; font-size:14px; color:#a80000;">Bad</span></div>
-        <div style="margin-left:auto; font-size:13px; color:#666;">Range: <strong>1.0–7.6 mg/L</strong></div>
+        <div style="font-size:20px; font-weight:700; ">Dissolved Oxygen (DO)    <span style="font-weight:600; font-size:14px; color:#a80000;"><br>Bad</span></div>
       </div>
       <p style="margin:10px 0 8px 0; color:#333;">
-        Most months are below healthy levels (<strong>5 mg/L</strong>). Low DO indicates heavy organic pollution and algal stress — aquatic life at risk.
+        Most months are below healthy levels (<strong>5 mg/L</strong>). <br> Low DO indicates heavy organic pollution and algal stress; aquatic life at risk.
       </p>
-
       <details style="margin-top:6px;">
         <summary style="cursor:pointer; font-weight:600;">What to do</summary>
         <ul style="margin:8px 0 0 18px; color:#333;">
@@ -578,13 +591,11 @@
     <article class="metric-card bad" data-metric="BOD" tabindex="0"
             style="border-radius:10px; padding:40px; box-shadow:0 2px 8px rgba(23, 23, 23, 0.035); border:1px solid #f0f0f0;">
       <div style="display:flex; align-items:center; gap:10px;">
-        <div style="font-size:20px; font-weight:700;">BOD — <span style="font-weight:600; font-size:14px;  color:#b03a00;">Very Bad</span></div>
-        <div style="margin-left:auto; font-size:13px; color:#666;">Mean: <strong>~16 mg/L</strong></div>
+        <div style="font-size:20px; font-weight:700;">Biological Oxygen Demand (BOD) <span style="font-weight:600; font-size:14px;  color:#b03a00;"> <br>  Very Bad</span></div>
       </div>
       <p style="margin:10px 0 8px 0; color:#333;">
-        Biological Oxygen Demand is far above healthy levels (&lt;3 mg/L). Indicates large amounts of decomposing organic matter — most likely untreated sewage.
+        Biological Oxygen Demand is far above healthy levels (&lt;3 mg/L). <br> Indicates large amounts of decomposing organic matter; most likely untreated sewage.
       </p>
-
       <details style="margin-top:6px;">
         <summary style="cursor:pointer;  font-weight:600;">What to do</summary>
         <ul style="margin:8px 0 0 18px; color:#333;">
@@ -599,19 +610,17 @@
     <article class="metric-card bad" data-metric="COD" tabindex="0"
             style="border-radius:10px; padding:40px; box-shadow:0 2px 8px rgba(23, 23, 23, 0.035); border:1px solid #f0f0f0;">
       <div style="display:flex; align-items:center; gap:10px;">
-        <div style="font-size:20px; font-weight:700; ">COD — <span style="font-weight:600; font-size:14px; color:#8b2d00;">Very Bad</span></div>
-        <div style="margin-left:auto; font-size:13px; color:#666;">Mean: <strong>~117 mg/L</strong></div>
+        <div style="font-size:20px; font-weight:700; ">Chemical Oxygen Demand (COD) <br> <span style="font-weight:600; font-size:14px; color:#8b2d00;">Very Bad</span></div>
       </div>
       <p style="margin:10px 0 8px 0; color:#333;">
-        Chemical Oxygen Demand is high, showing both organic and chemical pollution. Confirms serious untreated inflows.
+        Chemical Oxygen Demand is high, showing both organic and chemical pollution. <br> Confirms serious untreated inflows.
       </p>
-
       <details style="margin-top:6px;">
         <summary style="cursor:pointer; font-weight:600;">What to do</summary>
         <ul style="margin:8px 0 0 18px; color:#333;">
           <li>Monitor industrial & household discharges into the catchment.</li>
           <li>Implement simple pre-treatment for strong drains (settling tanks).</li>
-          <li>Public awareness — reduce use of harsh chemicals and detergents.</li>
+          <li>Public awareness, reduce use of harsh chemicals and detergents.</li>
         </ul>
       </details>
     </article>
@@ -620,13 +629,11 @@
     <article class="metric-card warn" data-metric="Turbidity" tabindex="0"
             style="border-radius:10px; padding:40px; box-shadow:0 2px 8px rgba(23, 23, 23, 0.035); border:1px solid #f0f0f0;">
       <div style="display:flex; align-items:center; gap:10px;">
-        <div style="font-size:20px; font-weight:700; ">Turbidity — <span style="font-weight:600; font-size:14px; color:#8a6000;">Bad / Variable</span></div>
-        <div style="margin-left:auto; font-size:13px; color:#666;">Peaks: <strong>~100 mg/L</strong></div>
+        <div style="font-size:20px; font-weight:700; ">Turbidity  <span style="font-weight:600; font-size:14px; color:#8a6000;"> <br> Bad / Variable</span></div>
       </div>
       <p style="margin:10px 0 8px 0; color:#333;">
-        Several months are very turbid (cloudy). Causes include silt, algae, and runoff events during monsoon.
+        Several months are very turbid (cloudy). <br> Causes include silt, algae, and runoff events during monsoon.
       </p>
-
       <details style="margin-top:6px;">
         <summary style="cursor:pointer; font-weight:600;">What to do</summary>
         <ul style="margin:8px 0 0 18px; color:#333;">
@@ -641,13 +648,11 @@
     <article class="metric-card warn" data-metric="TDS" tabindex="0"
              style="border-radius:10px; padding:40px; box-shadow:0 2px 8px rgba(23, 23, 23, 0.035); border:1px solid #f0f0f0;">
       <div style="display:flex; align-items:center; gap:10px;">
-        <div style="font-size:20px; font-weight:700; ">TDS — <span style="font-weight:600; font-size:14px; color:#6a5a00;">Erratic</span></div>
-        <div style="margin-left:auto; font-size:13px; color:#666;">Range: <strong>7 – 890 mg/L</strong></div>
+        <div style="font-size:20px; font-weight:700; ">Total Dissolved Solids (TDS) <span style="font-weight:600; font-size:14px; color:#6a5a00;"> <br> Erratic</span></div>
       </div>
       <p style="margin:10px 0 8px 0; color:#333;">
-        TDS shows extreme variation. A sudden very low reading (7 mg/L) is likely a sampling/data error; high peaks suggest saline/chemical inputs.
+         TDS shows extreme variation.<br> A sudden very low reading (7 mg/L) is likely a sampling/data error; high peaks suggest saline/chemical inputs.
       </p>
-
       <details style="margin-top:6px;">
         <summary style="cursor:pointer; font-weight:600;">What to do</summary>
         <ul style="margin:8px 0 0 18px; color:#333;">
@@ -662,13 +667,11 @@
     <article class="metric-card ok" data-metric="pH" tabindex="0"
              style="border-radius:10px; padding:40px; box-shadow:0 2px 8px rgba(23, 23, 23, 0.035); border:1px solid #f0f0f0;">
       <div style="display:flex; align-items:center; gap:10px;">
-        <div style="font-size:20px; font-weight:700; ">pH — <span style="font-weight:600; font-size:14px; color:#1a7a28;">Mostly OK</span></div>
-        <div style="margin-left:auto; font-size:13px; color:#666;">Range: <strong>6.9 – 8.2</strong></div>
+        <div style="font-size:20px; font-weight:700; ">pH <span style="font-weight:600; font-size:14px; color:#1a7a28;"><br> Mostly OK</span></div>
       </div>
       <p style="margin:10px 0 8px 0; color:#333;">
-        pH is within acceptable range. Slight alkalinity in some months suggests algal activity or detergent inflow.
+        pH is within acceptable range. <br> Slight alkalinity in some months suggests algal activity or detergent inflow.
       </p>
-
       <details style="margin-top:6px;">
         <summary style="cursor:pointer;  font-weight:600;">What to do</summary>
         <ul style="margin:8px 0 0 18px; color:#333;">
@@ -678,9 +681,79 @@
         </ul>
       </details>
     </article>
-
   </div>
+
+  <style>
+    /* Ensures grid is responsive, max 3 columns, 2 on tablet, 1 on phone */
+    @media (max-width: 1100px) {
+      .lake-metric-card-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+      }
+    }
+    @media (max-width: 700px) {
+      .lake-metric-card-grid {
+        grid-template-columns: 1fr !important;
+      }
+    }
+  </style>
 </section>
+
+  <section class="lake-metrics-explainer" style="max-width:715px; margin:34px auto 0 auto; background: #f8fafc; border-radius: 11px; border:1px solid #e4e9ee; box-shadow:0 2px 8px rgba(58,69,100,0.04);">
+    <button id="toggle-metric-explainer"
+      aria-expanded="false"
+      aria-controls="metric-explainer-content"
+      style="all:unset; cursor:pointer; display:flex; align-items:center; gap:7px; font-size:1.09em; font-weight:600; color:#27696a; padding:20px 28px;"
+      >
+      <span style="font-size:1.37em;">💡</span>
+      <span>What do these lake metrics mean?</span>
+      <span id="exp-arrow" style="margin-left:auto; font-size:1.2em;">▼</span>
+    </button>
+    <div id="metric-explainer-content" style="display:none; border-top:1px solid #e4e9ee; padding:1.2em 2.1em 1.4em 2.1em; color:#32545B; font-size:1.02em;">
+      <ul style="margin:0; padding:0; list-style:none;">
+        <li style="margin-bottom: 13px;">
+          <strong style="color:#256e55;">Temperature</strong><br>
+          <span style="color:#506579;">Temperature indicates how warm or cool the water is. It affects how much oxygen the water can hold and influences fish, algae, and bacterial activity. Extreme temperatures can stress aquatic life.</span>
+        </li>
+        <li style="margin-bottom: 13px;">
+          <strong style="color:#256e55;">pH</strong><br>
+          <span style="color:#506579;">pH measures acidity or alkalinity. Most lake organisms thrive when pH is near neutral (6.5–8.5). Outside this range, fish and plants may become stressed or die, and chemical pollutants can become more toxic.</span>
+        </li>
+        <li style="margin-bottom: 13px;">
+          <strong style="color:#256e55;">BOD (Biochemical Oxygen Demand)</strong><br>
+          <span style="color:#506579;">Indicates how much organic matter (sewage, leaves, waste) is present. High BOD means that lots of oxygen is used up by bacteria breaking down pollution, which can suffocate fish and harm the ecosystem.</span>
+        </li>
+        <li style="margin-bottom: 13px;">
+          <strong style="color:#256e55;">COD (Chemical Oxygen Demand)</strong><br>
+          <span style="color:#506579;">Measures both organic and chemical pollution that consume oxygen. High COD can signal industrial waste or untreated sewage entering the lake. Like BOD, it reduces the oxygen available for aquatic life.</span>
+        </li>
+        <li style="margin-bottom: 13px;">
+          <strong style="color:#256e55;">Turbidity</strong><br>
+          <span style="color:#506579;">How cloudy or muddy the water is, caused by suspended particles (silt, algae, waste). High turbidity blocks sunlight, harming plants and making it harder for fish to breathe and find food.</span>
+        </li>
+        <li style="margin-bottom: 0;">
+          <strong style="color:#256e55;">TDS (Total Dissolved Solids)</strong><br>
+          <span style="color:#506579;">Represents the amount of dissolved minerals, salts, and some pollutants in the water. Abnormal TDS may indicate chemical contamination (like detergents, salts, runoff) or data errors.</span>
+        </li>
+      </ul>
+      <div style="margin-top:14px; color:#91a6b4; font-size:0.96em;">
+        <em>Healthy lakes balance these factors. Too much pollution, unnatural chemistry or low oxygen can harm fish, plants, and the overall ecosystem.</em>
+      </div>
+    </div>
+    <script>
+      (function() {
+        const btn = document.getElementById('toggle-metric-explainer');
+        const panel = document.getElementById('metric-explainer-content');
+        const arrow = document.getElementById('exp-arrow');
+        btn.addEventListener('click', function() {
+          const expanded = btn.getAttribute('aria-expanded') === 'true';
+          btn.setAttribute('aria-expanded', !expanded);
+          panel.style.display = expanded ? 'none' : 'block';
+          arrow.textContent = expanded ? '▼' : '▲';
+        });
+      })();
+    </script>
+  </section>
+
   <!-- Action buttons 
   <div style="display:flex; gap:8px; margin-top:16px;">
     <button class="copy-summary" aria-label="Copy summary">Copy short summary</button>
@@ -979,9 +1052,8 @@
                 </div>
               </div>
             </div>
-            <article class="alert-card-litter">
-              <div class="alert-header">
-               
+            <article class="alert-card-algae">
+              <div class="alert-header">              
                 <div class="alert-content">
                   <h3 class="alert-title">Increased littering along northern walkway</h3>
                   <p >Use designated bins. Volunteers needed for weekend cleanup.</p>
@@ -1043,6 +1115,10 @@
               <label class="sms-option-label">
                 <input type="radio" name="delivery" value="sms"/>
                 <span>SMS</span>
+              </label>
+              <label class="sms-option-label">
+                <input type="radio" name="delivery" value="whatsapp"/>
+                <span>WhatsApp</span>
               </label>
             </fieldset>
             <div class="subscriber-inputs-grid">
@@ -1169,6 +1245,7 @@
             <li><a href="./index.html" class="gjs-t-link">Dashboard</a></li>
             <li><a href="./history.html" class="gjs-t-link">History</a></li>
             <li><a href="./flora-and-fauna.html" class="gjs-t-link">Flora &amp; Fauna</a></li>
+            <li><a href="./importance.html" class="gjs-t-link">Importance of Lakes</a></li>
             <li><a href="./alerts.html" class="gjs-t-link">Alerts</a></li>
             <li><a href="./report-issue.html" class="gjs-t-link">Report Issue</a></li>
           </ul>
